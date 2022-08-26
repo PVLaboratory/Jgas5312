@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Exercise J0829x42222085 박혜경</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+.prePrompt {float: left; margin: 20px   0px 20px 10px; padding: 10px   5px 10px   5px; background: #efc; font-family: bold Courier New; font-size: 14px; line-height: 0.5 em; width: 30px;              text-align: left; border: 1px solid powderblue; border-right: none; color: #700;}
+.preBody     {float: left; margin: 20px 10px 20px   0px; padding: 10px 10px 10px 10px; background: #efc; font-family: bold Courier New; font-size: 14px; line-height: 0.5 em; width: text-content; text-align: left; border: 1px solid powderblue; }
+</style>
+</head>
+<body style="word-break:keep-all; display: block; font-family: malgun;  font-size: 18px;">
+<center><h4>Exercise J0829x42222085 박혜경</h4></center><ul style="font-size: 14px">
+<li>답이 숫자인 경우, 가장 중요한 3개의 숫자로 반올림한다. For numeric answers, round answer to the 3 most significant digits.</li>
+<li>숫자를 문자열로 제출하는 경우, 양쪽에 따옴표를 붙인다. To submit a numeric string, use quotes to contain the answer.</li></ul>
+<table>
+<tbody>
+<tr>
+<td ><button onclick="saveTextAsFile()" style="font-family: malgun;  font-size: 20px">Save<br>Answers<br>to File</button></td>
+<td><textarea id="inputTextToSave" cols="155" rows="5" style="font-family: malgun;  font-size: 16px">
+나, 박혜경은(는) 위 내용을 읽고 아래 답을 직접 작성했음을 확인합니다. I, 박혜경, confirm that I read the notes above and wrote the answer myself below.
+--------------------------------------------------------------------------------------------------------------------
+1: 
+2: 
+3: 
+4: 
+5: 
+6: 
+7: 
+8: 
+9: 
+10: 
+11: 
+12: 
+13: 
+14: 
+15: 
+16: 
+17: 
+18: 
+19: </textarea></td></tr></tbody></table><input type="button" onclick="javascript:display_Q0();" value="Q-1" /> &emsp;
+<input type="button" onclick="javascript:display_Q1();" value="Q-2" /> &emsp;
+<input type="button" onclick="javascript:display_Q2();" value="Q-3" /> &emsp;
+<input type="button" onclick="javascript:display_Q3();" value="Q-4" /> &emsp;
+<input type="button" onclick="javascript:display_Q4();" value="Q-5" /> &emsp;
+<input type="button" onclick="javascript:display_Q5();" value="Q-6" /> &emsp;
+<input type="button" onclick="javascript:display_Q6();" value="Q-7" /> &emsp;
+<input type="button" onclick="javascript:display_Q7();" value="Q-8" /> &emsp;
+<input type="button" onclick="javascript:display_Q8();" value="Q-9" /> &emsp;
+<input type="button" onclick="javascript:display_Q9();" value="Q-10" /> &emsp;
+<input type="button" onclick="javascript:display_Q10();" value="Q-11" /> &emsp;
+<input type="button" onclick="javascript:display_Q11();" value="Q-12" /> &emsp;
+<input type="button" onclick="javascript:display_Q12();" value="Q-13" /> &emsp;
+<input type="button" onclick="javascript:display_Q13();" value="Q-14" /> &emsp;
+<input type="button" onclick="javascript:display_Q14();" value="Q-15" /> &emsp;
+<input type="button" onclick="javascript:display_Q15();" value="Q-16" /> &emsp;
+<input type="button" onclick="javascript:display_Q16();" value="Q-17" /> &emsp;
+<input type="button" onclick="javascript:display_Q17();" value="Q-18" /> &emsp;
+<input type="button" onclick="javascript:display_Q18();" value="Q-19" /> &emsp;
+<hr> <div id="Qs" style="word-break:keep-all; padding: 0px 20px 10px 20px; background-color: #eee; border: 1px solid #999; display: block; font-family: malgun;  font-size: 18px;"></div>
+<canvas id="canvas" width="800" height="0"></canvas>
+<div id="HTML0" style="word-break:keep-all; padding: 0px 20px 10px 20px; background-color: #f2f6fc; border: 1px solid #999; display: block; font-family: malgun;  font-size: 18px;line-height: 1.5em; display=none;"><center><h3>Python 들어가기</h3></center>
+<li><b>Python을 배우는 이유</b></li>
+<ul><li>coding에 대한 자신의 잠재능력 탐색 기회</li>
+<li>Python의 탁월한 활용성을 이용한 새로운 문제해결 방법 개발 기회</li>
+<ul><li>수많은 언어들 중 다양한 문제에 응용이 가능하다.</li></ul></ul>
+<li><b>배워야 할 내용들</b></li>
+<ul><li>Python kewwords와 built-in functions</li><li>기본 문법</li>
+<ul><li>Python 숫자 데이터</li>
+<li>Python 반복문/선택문</li>
+<li>Python 리스트와 내장함수</li>
+<li>Python 문자열과 내장함수</li>
+<li>Python dictionary와 내장함수</li>
+<li>Python def</li>
+<li>Python class</li></ul>
+<li>파일 읽기/쓰기</li>
+<li>이미지 읽기/쓰기</li>
+<li>모듈 사용</li>
+<ul><li>Python에서 기본으로 제공하는 수 많은 modules</li>
+<ul><li>os, random, math, webbrowser, ...<a href="https://docs.python.org/3/py-modindex.html" target="_blank">Python Module Index</a></li></ul>
+<li>PyPI에서 제공하는 수 많은 libraries</li>
+<ul><li>몇 가지 예: <a href="https://numpy.org/" target="_blank">NumPy</a>, <a href="https://pillow.readthedocs.io/en/stable/" target="_blank">Pillow</a>, <a href="https://pandas.pydata.org/" target="_blank">pandas</a>, <a href="https://matplotlib.org/" target="_blank">Matplotlib</a></li</ul>
+<li>그 외 수많은 websites에서 제공하는 정보와 도움말</li></ul></ul>
+<li>전부 배울 수 없다는 사실</li>
+<ul><li>배워야 할 내용이 얼마나 있는 지 알 수 없으며</li>
+<li>그 많은 내용을 모두 배워야 할 이유도 없다.</li></ul>
+<li>배워야 할 것:</li>
+<ol><li>Python을 사용할 수 있는 기초 능력 함양이며,</li>
+<li>앞서 배운 기초 내용을 응용할 수 있는 능력</li>
+<li>필요한 내용을 외부에서 구해오는 능력</li>
+<li>외부로부터 얻은 내용을 필요한 만큼 수정할 수 있는 능력 등을 터득하는 것.</li></ol></ul>
+<li><b>준비물</b></li>
+<ul><li>프로그램</li>
+<ul><li>없음 (입문단계)</li>
+<ul><li>지난 몇 개월 사이에 python 입문을 쉽게 해주는 것들이 많아졌음.</li>
+<li><a href="https://www.google.com/search?q=python+online&oq=python+online&aqs=chrome.0.69i59j0i512l4j69i60l3.3457j0j7&sourceid=chrome&ie=UTF-8" target="_blank">Python online 내용을 탐색</a>해 보자.</li>
+<ul><li>JavaScript 언어를 이용하여 웹 브라우저에서 바로 python을 사용할 수 있도록 만든 기능들이다.</li></ul></ul>
+<li>있음 (전문가 단계)</li>
+<ul><li>Python IDLE</li>
+<li>Anaconda</li></ul></ul>
+<li>참고자료</li>
+<ul><li>너무 많아 열거 할 수 없음.</li>
+<li>그 중 가장 기본적인 자료: <a href="https://docs.python.org/3/" target="_blank">Python 3.10.6 documentation</a>.</li>
+<ul><li>한글 버전도 있음.</li></ul></ul>
+<li>참고자료 중 참고할 것과 피해야 할 것을 구분하는 능력을 터득해야 한다.</li></ul>
+<br>
+<li><b><a href="https://docs.python.org/3/reference/lexical_analysis.html#keywords" target="_blank">Python keywords</a></b></li>
+<ul><li>built-in functions과 함께 Python 프로그램을 구성하는 뼈대(?)</li>
+<li>이 글을 작성하는 본인도 아직 다 모름: 자랑이 아니라 몰라도 원하는 프로그램 작성 가능하다는 뜻</li>
+<li>keyword는 프로그램 언어에서 임의로 사용할 수 없음.</li></ul>
+<li><b><a href="https://docs.python.org/3/library/functions.html" target="_blank">Python built-in functions</a></b></li>
+<ul><li>Python을 설치하면 함께 제공하는 수십 여개의 함수들</li>
+<li>마찬가지로 아직 사용해 보지 않은 함수들이 꽤 있음: 아는만큼 할 수 있는 일이 많아짐.</li>
+<li>built-in function을 임의로 사용하면 본래 built-in function 기능을 잃어버리며 예상치 못한 일이 발생할 수 있음.</li></div><div id="HTML1" style="word-break:keep-all; padding: 0px 20px 10px 20px; background-color: #f2f6fc; border: 1px solid #999; display: block; font-family: malgun;  font-size: 18px;line-height: 1.5em; display=none;"><center><h3>Python 기본 연산</h3>
+<table style="border-collapse: collapse; border: 1px solid #dddddd;">
+  <tr>
+    <th style="border: 1px solid #dddddd; padding: 8px;">연산 (operation)</th>
+    <th style="border: 1px solid #dddddd; padding: 8px;">코드</th>
+    <th style="border: 1px solid #dddddd; padding: 8px;">순위</th>
+    <th style="border: 1px solid #dddddd; padding: 8px;">유의사항</th>
+  </tr>
+  <tr style="background-color: #dddddd;">
+    <td style="border: 1px solid #dddddd; padding: 8px;">덧셈 (addition)</td>
+    <td style="border: 1px solid #dddddd; padding: 8px;">a + b</td>
+    <td style="border: 1px solid #dddddd; padding: 8px;">3 (낮다)</td>
+    <td style="border: 1px solid #dddddd; padding: 8px;"></td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">뺄셈 (subtraction)</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">a - b</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">3</td>
+  </tr>
+  <tr style="background-color: #dddddd;">
+    <td style="border: 1px solid #dddddd;  padding: 8px;">곱셈 (multiplication)</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">a * b</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">2</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">"a &times; b"도 아니며 "a . b"도 아님</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">나눗셈 (division)</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">a / b</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">2</td>
+		<td style="border: 1px solid #dddddd;  padding: 8px;">실제 "a &divide; b"을 뜻하나, 코드에서는 / 사용, </td>
+  </tr>
+  <tr style="background-color: #dddddd;">
+    <td style="border: 1px solid #dddddd;  padding: 8px;">나머지 (remainder)</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">a % b</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">2</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;"></td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">몫 (quotient)</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">a // b</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">2</td>
+  </tr>
+  <tr style="background-color: #dddddd;">
+    <td style="border: 1px solid #dddddd;  padding: 8px;">거듭제곱 (exponent)</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">a ** b</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">1 (높다)</td>
+		<td style="border: 1px solid #dddddd;  padding: 8px;">"a ^ b"가 아님</td>
+  </tr>
+</table>
+</center>
+<br>
+<li><b>연산순위</b></li>
+<ul><li>연산은 기본적으로 왼쪽에서 시작해서 오른쪽으로 한 번에 한 개씩 연산한다.</li>
+<li>그렇다면, 아래 코드 계산 결과는 어떻게 처리되었을까?</li>
+<div style="display: flex; justify-content: center; padding: 5px 10px; line-height: 0.6em">
+<pre class="prePrompt">
+&gt;&gt;&gt;<br>
+<br></pre>
+<pre class="preBody">
+<font color="#900090">print</font>(1+2-3*4/5%6//7**8)<br>
+<font color="#0000ff">3.0</font></pre></div>
+<ol><li>위 계산은 가장 먼저 7**8을 계산하여 5764801을 구한다.</li>
+<li>두 번째로 3*4/5%6//5764801을 왼쪽부터 한 번에 한 개씩 연산해서 0.0을 구한다.</li>
+<li>그 다음, 1+2-0.0을 왼쪽부터 한 번에 한 개씩 연산해서 3.0을 구한다.</li></ol></ul>
+<ul><li>괄호 사용</li>
+<ul><li>괄호 안에 연산은 위 기본 순서에 앞서 가장 먼저 연산한다.</li>
+<li>괄호들이 중첩(nested)된 경우, 가장 안 쪽의 괄호를 가장 먼저 연산한다.</li></ul></ul>
+<br>
+<li><b>복합대입 연산자</b></li>
+<center><table style="border-collapse: collapse; border: 1px solid #dddddd;">
+  <tr style="background-color: #dddddd;">
+    <td style="border: 1px solid #dddddd; padding: 8px;">+=</td>
+    <td style="border: 1px solid #dddddd; padding: 8px;">x += 5</td>
+    <td style="border: 1px solid #dddddd; padding: 8px;">x = x + 5</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">-=</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">x -= 5</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">x = x - 5</td>
+  </tr>
+  <tr style="background-color: #dddddd;">
+    <td style="border: 1px solid #dddddd;  padding: 8px;">*=</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">x *= 5</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">x = x * 5</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">/=</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">x /= 5</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">x = x / 5</td>
+  </tr>
+</table>
+</center>
+<ul><li>복합대입 연산자의 연산기호 2 개는 반드시 붙여 써야 한다.</li></ul></div><div id="HTML10" style="word-break:keep-all; padding: 0px 20px 10px 20px; background-color: #f2f6fc; border: 1px solid #999; display: block; font-family: malgun;  font-size: 18px;line-height: 1.5em; display=none;"><center><h3>Python 기본 객체 (object)와 형태 (type)</h3>
+<div style="display: flex; justify-content: center; padding: 5px;">
+<table style="padding: 5px 20px">
+  <tr>
+    <th style="  border: 1px solid #dddddd;  text-align: left;  padding: 4px;">type</th>
+    <th style="  border: 1px solid #dddddd;  text-align: left;  padding: 4px;">예시 값</th>
+  <tr style="background-color: #dddddd;">
+    <td style="  border: 1px solid #dddddd;  text-align: left;  padding: 4px;">정수 (integers)</td>
+    <td style="  border: 1px solid #dddddd;  text-align: left;  padding: 4px;">3, -2, 123456</td></tr>
+  <tr>
+		<td style="  border: 1px solid #dddddd;  text-align: left;  padding: 4px;">실수</td>
+    <td style="  border: 1px solid #dddddd;  text-align: left;  padding: 4px;">3.0, -5.6, 1.23e3, -1e-32</td></tr>
+  <tr style="background-color: #dddddd;">
+    <td style="  border: 1px solid #dddddd;  text-align: left;  padding: 4px;">복소수</td>
+    <td style="  border: 1px solid #dddddd;  text-align: left;  padding: 4px;">1+0.3j, -1-0.j</td></tr>
+  <tr>
+    <td style="  border: 1px solid #dddddd;  text-align: left;  padding: 4px;">논리값</td>
+		<td style="  border: 1px solid #dddddd;  text-align: left;  padding: 4px;"><font color="#ff7700">True</font>, <font color="#ff7700">False</font></td></tr>
+  <tr style="background-color: #dddddd;">
+    <td style="  border: 1px solid #dddddd;  text-align: left;  padding: 4px;">문자열</td>
+    <td style="  border: 1px solid #dddddd;  text-align: left;  padding: 4px;"><font color="#00aa00">"I&apos;m a boy"</font>, <font color="#00aa00">&apos;I said, "Python is great!"&apos;</font></td></tr></table>
+
+<table style="padding: 5px 20px">
+  <tr>
+    <th style="  border: 1px solid #dddddd;  text-align: left;  padding: 4px;">type</th>
+    <th style="  border: 1px solid #dddddd;  text-align: left;  padding: 4px;">예시 값</th>
+  <tr style="background-color: #dddddd;">
+    <td style="  border: 1px solid #dddddd;  text-align: left;  padding: 4px;">리스트 (list)</td>
+    <td style="  border: 1px solid #dddddd;  text-align: left;  padding: 4px;">[0, 1], [[], 3, <font color="#00aa00">"boy"</font>]</td> </tr>
+  <tr>
+    <td style="  border: 1px solid #dddddd;  text-align: left;  padding: 4px;">투풀 (tuple)</td>
+    <td style="  border: 1px solid #dddddd;  text-align: left;  padding: 4px;">(0, 1), ((), 3, <font color="#00aa00">"girl"</font>)</td>
+  <tr style="background-color: #dddddd;">
+    <td style="  border: 1px solid #dddddd;  text-align: left;  padding: 4px;">dictionary</td>
+    <td style="  border: 1px solid #dddddd;  text-align: left;  padding: 4px;">{20: [[], 3], 1:([], 3)}</td>
+  <tr>
+    <td style="  border: 1px solid #dddddd;  text-align: left;  padding: 4px;">세트 (set)</td>
+    <td style="  border: 1px solid #dddddd;  text-align: left;  padding: 4px;">{0, 3}</td>
+</tr></table></div></center>
+<ul>
+<li>Python의 기본 객체는 그 자체가 값(value)을 의미한다.</li>
+<li>값이란 데이터 한 개를 뜻하며, 그 한 개가 여러 개를 묶은 것을 뜻할 수도 있다.</li>
+<ul><li>위 오른쪽 테이블에 나열된 객체들이 여러 개를 묶은 한 개 값을 뜻한다.</li></ul>
+<li>생성된 값은 임의로 지울 수 없다.</li>
+<li>전혀 사용하지 않는 값은, Python의 판단 하에, Garbage Collection이라는 과정을 통해 삭제된다.</li></ul>
+<br>
+<li><b>정수 (integers)</b></li>
+<ul><li>Python은 숫자에 소숫점의 사용 여부에 따라 정수와 실수를 구분한다.</li>
+<ul><li>소숫점이 있으면 무조건 실수 (floating point numbers)로 처리하며, 없으면 정수로 처리한다.</li></ul>
+<li>실수에 대해서는 항상 8 바이트(byte) 또는 64 비트(bit)만을 사용하는 반면, 정수는 컴퓨터의 기능을 필요한 만큼 제한없이 사용한다.</li>
+<ul><li>제한없이 사용한다는 표현에 대한 한 가지 예시는 다음과 같다:</li>
+<div style="display: flex; justify-content: center; padding: 5px 10px; line-height: 0.6em">
+<pre class="prePrompt">
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br></pre>
+<pre class="preBody">
+<font color="#900090">print</font>(9223372036854775807+1)<br>
+<font color="#0000ff">9223372036854775808</font><br>
+<font color="#900090">print</font>(9223372036854775807**2)<br>
+<font color="#0000ff">85070591730234615847396907784232501249</font></pre></div>
+
+<ul><li>64 비트(bit)으로 표현할 수 있는 최대 정수 값은 9223372036854775807 이다. 최대 정수값이란 더 이상 큰 수를 표현할 수 없다는 뜻이다.</li>
+<li>만약 최대 정수 값에 1을 더하거나 제곱하면 어떻게 될까?</li>
+<li>Python은 아무런 오류없이 최대 정수값에 1을 더하면 9223372036854775808을 보여주고, 9223372036854775807을 제곱한 값으로 85070591730234615847396907784232501249을 보여준다.</li></ul>
+<li>Python은 정수를 연산하고 표현하는 데 있어서 8 바이트라는 제한을 사용하지 않는다.</li></ul></ul><br>
+<li><b>실수 (floating point numbers)</b></li>
+<ul><li>소수점 위치가 숫자에 따라 달라지는 수</li>
+<li>Python은 실수에 사용하는 64 비트 중 11 비트를 10의 지수에 사용하고 나머지 53 비트에 1보다 작은 숫자를 표현하는 데 사용한다. 당연히 지수에 사용한 11 비트 중 1 비트는 지수의 부호에 사용하며, 53 비트 중 1 비트는 숫자의 부호를 표현하는 데 사용한다.</li>
+<li>Python으로 실수 사용에 있어서 반드시 알아야 두 가지 사항</li>
+<ul><li>그동안 학교 수업을 통해 배운 실수에 대한 덧셈과 뺄셈 결과에 대해 동일한 계산을 Python으로 처리하는 경우 결과가 다를 수 있음에 유의해야 한다.</li>
+<li>아래 첫번째 코드는 0.1에 0.1을 더한 결과가 0.2와 동일한 지 확인하는 코드이며, 두번째는 0.1을 세번 더한 값이 0.3과 동일한 지 확인하는 코드이다.</li>
+<div style="display: flex; justify-content: center; padding: 5px 10px; line-height: 0.6em">
+<pre class="prePrompt">
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br></pre>
+<pre class="preBody">
+<font color="#900090">print</font>(0.1 + 0.1 == 0.2)<br>
+<font color="#0000ff">True</font><br>
+<font color="#900090">print</font>(0.1 + 0.1 + 0.1 == 0.3)<br>
+<font color="#0000ff">False</font></pre></div>
+<ul><li>첫번째 계산 결과는 당연하다고 이해하는 반면 두번째 계산 결과에 대해서는 쉽게 수긍하기 어려울 것이다.</li>
+<li>혹시 Python에 잘못이 있다고 생각하는 사람은 이 결과가 Python만의 문제가 아니라 모든 컴퓨터 프로그램 언어가 가진 문제점이라는 사실을 가능한 빨리 받아주어야 한다.</li>
+<li>앞서 언급한 바와 같이 64 비트만을 이용하여 실수를 표현하는 모든 프로그램 언어가 가진 문제점이며, 수년 후 64 비트 대신 128 비트 또는 512 비트를 이용하여 실수를 표현하더라도 항상 발생하는 문제점이라는 점을 빨리 깨달아야 한다.</li></ul><br>
+<li>epsilon: 1과 1보다 큰 가장 작은 수의 차이</li>
+<ul><li>64 비트로 표현하는 실수는 10<sup>-308</sup>의 매우 작은 수도 표현할 수 있다. </li>
+<li>하지만 52 비트로 소숫점 이하의 값을 표현하다보니 2<sup>-52</sup> = 2.22&times;10<sup>-16</sup>가 최소 분해능이 되어, 2.22&times;10<sup>-16</sup>의 반 보다 작은 수를 1에 더한 경우 1과 차이를 만들지 못하는 일이 발생하며, 2.22&times;10<sup>-16</sup>의 반 보다 큰 수를 1에 더하면 결과는 2.22&times;10<sup>-16</sup>를 1에 더한 값과 동일해진다.</li>
+<div style="display: flex; justify-content: center; padding: 5px 10px; line-height: 0.6em">
+<pre class="prePrompt">
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;</pre>
+<pre class="preBody">
+<font color="#900090">print</font>(1.12e-16 + 1 == 1)<br>
+<font color="#0000ff">False</font><br>
+<font color="#900090">print</font>(1.11e-16 + 1 == 1)<br>
+<font color="#0000ff">True</font><br>
+<font color="#900090">print</font>(1.11e-16 + 1 == 2.22e-16 + 1)<br>
+<font color="#0000ff">True</font></pre></div>
+<ul><li>첫번째 계산 결과는 작은 숫자와 더한 결과 분명히 1과 다름을 보여주고 있는 반면, 두 번째 계산 결과는 1과 다르지 않음을 보여주고 있다.</li></ul></ul>
+<li>정수와 실수가 섞여있는 경우, 정수는 모두 실수로 처리된다.</li>
+<li>두 정수의 나눗셈도 실수로 처리된다.</li></ul></ul>
+<br>
+<li><b>Built-in function을 이용한 값들 사이의 변환</b></li>
+
+<div style="display: flex; justify-content: center; padding: 5px 10px; line-height: 0.6em">
+<pre class="prePrompt">
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;</pre>
+<pre class="preBody">
+<font color="#900090">int</font>(5.2)<br>
+<font color="#0000ff">5</font><br>
+<font color="#900090">int</font>(-5.2)<br>
+<font color="#0000ff">-5</font><br>
+<font color="#900090">int</font>(<font color="#00aa00">'5'</font>)<br>
+<font color="#0000ff">5</font><br>
+<font color="#900090">int</font>(<font color="#00aa00">'5.2'</font>)<br>
+<font color="#dd0000">Traceback (most recent call last):<br>
+  File "<pyshell#8>", line 1, in <module><br>
+    int('5.2')<br>
+ValueError: invalid literal for int() with base 10: '5.2'</font></pre>
+
+<pre class="prePrompt">
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;</pre>
+<pre class="preBody">
+<font color="#900090">float</font>(5)<br>
+<font color="#0000ff">5.0</font><br>
+<font color="#900090">float</font>(-5)<br>
+<font color="#0000ff">-5.0</font><br>
+<font color="#900090">float</font>(<font color="#00aa00">'5'</font>)<br>
+<font color="#0000ff">5.0</font><br>
+<font color="#900090">float</font>(<font color="#00aa00">'5.2'</font>)<br>
+<font color="#0000ff">5.2</font></pre>
+
+</div></div><div id="HTML13" style="word-break:keep-all; padding: 0px 20px 10px 20px; background-color: #f2f6fc; border: 1px solid #999; display: block; font-family: malgun;  font-size: 18px;line-height: 1.5em; display=none;"><center><h3>Python 변수 이름(names)</h3></center>
+<ul>
+<li>Python 언어에서 변수란 단순히 이름뿐이다.</li>
+<li>변수는 단순히 이름으로 값과 연결되어 있을 뿐이다.</li>
+<li>Python의 변수 이름(name)은 수많은 종류의 데이터를 다루는 가장 기본적인 수단이다.</li>
+<ul><li>데이터의 종류에 상관없이 원하는 데이터를 갖고와서 처리해서 내가 원하는 조건에 부합하는 지 따져 보기 위해 제일 먼저 할 일은 바로 원하는 데이터를 원하는 이름의 변수에 연결해 주는 일이다.</li>
+<li>즉, 변수에 연결되지 않은 데이터란 상상할 수도 없다.</li></ul>
+<li>결과적으로 변수를 보면 연결된 데이터를 상상할 수 있도록 정하는 것이 여러모로 편할 것이다.</li>
+<ul><li>Python은 의외로 변수 이름에 매우 자유스럽다. 한글도 사용할 수 있으며 그리스 기호를 사용할 수도 있다.</li></ul>
+<li>자유롭게 이름을 정할 수도 있지만 남용할 수는 없다. 이유는 python code내에서 변수를 쉽게 구별할 수 있어야 한다.</li>
+
+<li>변수 이름은 가급적 영문으로 시작한다.</li>
+<ul><li>변수 이름 내부에 숫자를 사용할 수 있다.</li></ul>
+<li>변수 이름은 반드시 한 개의 단어이어야 한다.</li>
+<ul><li>변수 이름에 빈 칸을 사용하고 싶다면 빈 칸 대신  밑줄(_; underscore)를 사용한다.</li></ul>
+<li>변수의 대/소문자는 구별된다.</li>
+<ul><li>abc, Abc, aBc, abC 모두 다른 변수이름들이다.</li></ul>
+<li>Python의 keyword는 변수이름으로 사용할 수 없다.</li>
+<li>Python의 built-in functions은 변수이름으로 사용할 수 있으나, 사용하면 예상 외의 오류가 발생할 수도 있다. 사용하지 않는다.</li>
+<li>Camel case</li>
+<ul><li>예: AreaOfTriangle, SearchArea, 등등</li></ul>
+<li>밑줄(_; underscore)를 사용하는 방법</li>
+<ul><li>예: area_of_triangle, search_area, 등등</li></ul></ul>
+<li><b>동적형태 (dynamic typing)</b></li>
+<ul><li>Python의 매우 중요한 개념</li>
+<li>Python에서 사용하는 변수는 본래 형태를 갖고 있는 것이 아니라, 그 때 그 때 연결된 값의 형태를 대변해 줄뿐이라는 사실을 뜻한다.</li>
+<div style="display: flex; justify-content: center; padding: 5px 10px; line-height: 0.6em">
+<pre class="prePrompt">
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br></pre>
+<pre class="preBody">
+a = 234<br>
+<font color="#900090">print</font>(<font color="#900090">type</font>(a))<br>
+<font color="#0000ff">&lt;class 'int'&gt;</font><br>
+a = 2.34<br>
+<font color="#900090">print</font>(<font color="#900090">type</font>(a))<br>
+<font color="#0000ff">&lt;class 'float'&gt;</font><br>
+a = <font color="#00aa00">'2.34'</font><br>
+<font color="#900090">print</font>(<font color="#900090">type</font>(a))<br>
+<font color="#0000ff">&lt;class 'str'&gt;</font></pre></div>
+
+<ul><li>위 코드에서는 변수는 한 개만 사용한 반면 값은 세 개가 사용되고 있다.</li>
+<li>처음에는 정수에 변수가 연결되어 있기 때문에 변수의 형태를 물어본 것은 변수에 연결된 값, 이 경우 정수의 형태를 물어본 것이므로 결과는 정수라는 int가 출력되었으며</li>
+<li>그 다음으로 해당 변수를 다른 값, 이 경우에는 실수에 연결되었기 때문에 변수의 형태를 물어본 결과 실수 float임을 보여주고 있다.</li>
+<li>끝으로 해당변수를 문자열에 연결한 후의 변수의 형태를 물어본 경우에는 당연하게도 문자열을 뜻하는 str을 보여주고 있는 것이다.</li></ul>
+<li>Python의 이러한 성질을 글로 표현한 책이나 인터넷 정보는 쉽게 찾아볼 수 있다.</li>
+<ul><li>하지만 그 내용의 몇 줄을 읽어 내려가다보면 변수에 값이 저장되어있다는 표현을 쉽게 사용하는 오류(?)를 발견할 수 있다.</li>
+<li>Python의 변수에는 값이 저장되어 있는 것이 아니라 값과 연결되어 있을 뿐이다.</li>
+<li>하지만 사용하는 데 문제가 없다면 그냥 남들이 표현하듯이 저장되어 있다고 생각해도 좋다.</li>
+<ul><li><b>이로 인해 밯생되는 오류에 대해서는 본인이 책임을 저야 한다.</b></li>
+<li>이와 관련된 사항으로 추후 shallow copy와 deep copy의 차이점을 살펴 볼 예정이다.</li></ul></ul></ul>
+
+<li><b>할당문 (assignment statement)</b></li>
+<ul><li>혹자는 대입문이라 부르기도 한다.</li>
+
+<li>변수에 값을 연결하는 가장 기본적인 구문이다.</li>
+<li>등호(=)를 사용하며 위 코드에서 보여준 것 처럼 등호 왼쪽에 적힌 이름의 변수에 연결한 값을 등호 오른쪽에 적는다.</li>
+<ul><li>수학에서 배운 등호와 기호상으로는 동일하나 전혀 다르다는 사실을 빨리 인식해야 한다.</li></ul>
+<li>때로는 변수에 연결할 값을 직접 적은 것 (literal)이 아니라 값을 얻는 표현식 (expression)을 적는 경우도 있다.</li>
+<ul><li>또 다른 방법은 차차 알게 될 것이다.</li></ul></div><div id="HTML14" style="word-break:keep-all; padding: 0px 20px 10px 20px; background-color: #f2f6fc; border: 1px solid #999; display: block; font-family: malgun;  font-size: 18px;line-height: 1.5em; display=none;"><center><h3>Python 변수 이름(names)과 값(literal values)</h3></center>
+<ul>
+<li>Python의 변수는 단순히 이름(name)뿐이며, 값(value)를 저장하는 대신 값에 연결되어있다.</li>
+<ul><li>Python이 아닌 다른 프로그래밍 언어, 예를 들어 c,에서는 변수에 값을 저장한다고 표현한다.</li></ul>
+<li>동일한 값에 연결된 변수는 여러 개 있을 수 있으나, 여러 개 값에 연결된 변수는 존재하지 않는다.</li>
+<ul><li>아래 코드의 두 변수는 동일한 값 5에 연결되어 있다.</li></ul>
+<div style="display: flex; justify-content: center; padding: 5px 10px; line-height: 0.6em">
+<pre class="prePrompt">
+&gt;&gt;&gt;</pre>
+<pre class="preBody">
+a = b = 5</pre></div>
+<li>Python에서 변수에 값을 저장하느냐 하지 않느냐에 관해서는 나중에 리스트 등과 같이 여러 개 값을 묶은 데이터를 다룰 때 다시 한번 살펴볼 필요가 있다.</li>
+<ul><li>종종 이와 관련하여 생각하지 못한 심각한 오류가 발생하기도 하며, deepcopy및 shallow copy등으로 표현하기도 한다.</li></ul>
+<li>변수는 반드시 값에 연결되어야 한다.</li>
+<ul><li>프로그램 입문자들이 초기에 많이 일으키는 오류는 바로 값에 연결되지 않은 변수를 사용하기 때문이다.</li>
+<li>아래 코드에서 오류가 발생 원인을 생각해 보라</li>
+<div style="display: flex; justify-content: center; padding: 5px 10px; line-height: 0.6em">
+<pre class="prePrompt">
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;</pre>
+<pre class="preBody">
+a = 5<br>
+<font color="#900090">print</font>(a2+3)<br>
+<font color="#dd0000">Traceback (most recent call last):<br>
+  File "<pyshell#1>", line 1, in <module><br>
+    print(a2+3)<br>
+NameError: name 'a2' is not defined. Did you mean: 'a'?</font></code></pre>
+</div>
+<li>오류 생성 원인은 변수 a2에 연결된 값과 5를 합한 값을 출력하라는 코드를 실행하는 단계에 있어서는 아직 이름이 a2라는 변수가 존재하지 않기 때문이다. </li></ul>
+<li>경우에 따라 값이 아직 연결되지 않은 변수이름을 사용하는 경우도 있다.</li>
+<ul><li>할당문(assignement statement)의 등호 왼쪽에 사용한 변수에는 기존에 값이 연결되어 있던 없더 상관하지 않고 무조건 등호 오른쪽에서 얻은 값을 연결한다.</li>
+<li>아래 코드와 같은 경우, 등호 오른쪽에 적힌 값 정수 5를 메모리에 저장한 후 저장주소를 변수 a에 연결해준다.</li>
+<div style="display: flex; justify-content: center; padding: 5px 10px; line-height: 0.6em">
+<pre class="prePrompt">
+&gt;&gt;&gt;</pre>
+<pre class="preBody">
+a = 5</pre></div>
+</ul></ul>
+
+<li><b>Python data type과 관련된 몇 가지 built-in functions 사용법</b></li>
+<div style="display: flex; justify-content: center; padding: 5px 10px; line-height: 0.6em">
+<pre class="prePrompt">
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;</pre>
+<pre class="preBody">
+a = 555<br>
+<font color="#900090">print</font>(<font color="#900090">type</font>(a))<br>
+<font color="#0000ff">&lt;class 'int'&gt;</font><br>
+<font color="#900090">print</font>(<font color="#900090">isinsance</font>(a, <font color="#900090">int</font>))<br>
+<font color="#0000ff">True</font><br>
+<font color="#900090">id</font>(a)<br>
+<font color="#0000ff">2149477791248</font><br>
+b = a<br>
+<font color="#900090">id</font>(a)<br>
+<font color="#0000ff">2149477791248</font><br>
+b = 555<br>
+<font color="#900090">id</font>(a)<br>
+<font color="#0000ff">2149477791024</font><br>
+a == b<br>
+<font color="#0000ff">True</font><br>
+a <font color="#ff7700">is</font> b<br>
+<font color="#0000ff">False</font>
+</pre>
+
+<pre class="prePrompt">
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;</pre>
+<pre class="preBody">
+a = 5.55<br>
+<font color="#900090">print</font>(<font color="#900090">type</font>(a))<br>
+<font color="#0000ff">&lt;class 'float'&gt;</font><br>
+<font color="#900090">print</font>(<font color="#900090">isinsance</font>(a, <font color="#900090">float</font>))<br>
+<font color="#0000ff">True</font><br>
+<font color="#900090">id</font>(a)<br>
+<font color="#0000ff">2149477785072</font><br>
+b = a<br>
+<font color="#900090">id</font>(a)<br>
+<font color="#0000ff">2149477785072</font><br>
+b = 5.55<br>
+<font color="#900090">id</font>(a)<br>
+<font color="#0000ff">2149477786864</font><br>
+a == b<br>
+<font color="#0000ff">True</font><br>
+a <font color="#ff7700">is</font> b<br>
+<font color="#0000ff">False</font>
+</pre>
+
+<pre class="prePrompt">
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;</pre>
+<pre class="preBody">
+a = <font color="#00aa00">'5.55'</font><br>
+<font color="#900090">print</font>(<font color="#900090">type</font>(a))<br>
+<font color="#0000ff">&lt;class 'str'&gt;</font><br>
+<font color="#900090">print</font>(<font color="#900090">isinsance</font>(a, <font color="#900090">str</font>))<br>
+<font color="#0000ff">True</font><br>
+<font color="#900090">id</font>(a)<br>
+<font color="#0000ff">2149479298736</font><br>
+b = a<br>
+<font color="#900090">id</font>(a)<br>
+<font color="#0000ff">2149479298736</font><br>
+b = <font color="#00aa00">'5.55'</font><br>
+<font color="#900090">id</font>(a)<br>
+<font color="#0000ff">2149479298032</font><br>
+a == b<br>
+<font color="#0000ff">True</font><br>
+a <font color="#ff7700">is</font> b<br>
+<font color="#0000ff">False</font>
+</pre>
+
+</div></div><script type="text/javascript">
+function saveTextAsFile() {
+    var textToSave = document.getElementById("inputTextToSave").value;
+    var textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});
+    var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
+    var fileNameToSaveAs = "J0829x42222085.txt"
+
+    var downloadLink = document.createElement("a");
+    downloadLink.download = fileNameToSaveAs;
+    downloadLink.innerHTML = "Download File";
+    downloadLink.href = textToSaveAsURL;
+    downloadLink.onclick = destroyClickedElement;
+    downloadLink.style.display = "none";
+    document.body.appendChild(downloadLink);
+
+    downloadLink.click();
+}
+
+function destroyClickedElement(event) {
+    document.body.removeChild(event.target);
+}
+</script>
+<script type="application/javascript">
+function display_Q0() {
+document.getElementById("Qs").innerHTML='';
+
+document.getElementById("Qs").style.display = "none";document.getElementById("HTML0").style.display = "block";document.getElementById("HTML1").style.display = "none";document.getElementById("HTML10").style.display = "none";document.getElementById("HTML13").style.display = "none";document.getElementById("HTML14").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q1() {
+document.getElementById("Qs").innerHTML='';
+
+document.getElementById("Qs").style.display = "none";document.getElementById("HTML0").style.display = "none";document.getElementById("HTML1").style.display = "block";document.getElementById("HTML10").style.display = "none";document.getElementById("HTML13").style.display = "none";document.getElementById("HTML14").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q2() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>3.</strong></font><br> 다음 두 수 11와 11의 합을 구해 제출하시오.';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";document.getElementById("HTML1").style.display = "none";document.getElementById("HTML10").style.display = "none";document.getElementById("HTML13").style.display = "none";document.getElementById("HTML14").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q3() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>4.</strong></font><br> 다음 두 수 17와 7의 곱을 구해 제출하시오.';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";document.getElementById("HTML1").style.display = "none";document.getElementById("HTML10").style.display = "none";document.getElementById("HTML13").style.display = "none";document.getElementById("HTML14").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q4() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>5.</strong></font><br> 다음 두 수 26와 9의 차, 26-9을 구해 제출하시오.';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";document.getElementById("HTML1").style.display = "none";document.getElementById("HTML10").style.display = "none";document.getElementById("HTML13").style.display = "none";document.getElementById("HTML14").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q5() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>6.</strong></font><br> 21를 3으로 나눈 나머지를 구해 제출하시오.';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";document.getElementById("HTML1").style.display = "none";document.getElementById("HTML10").style.display = "none";document.getElementById("HTML13").style.display = "none";document.getElementById("HTML14").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q6() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>7.</strong></font><br> 15를 5으로 나눈 몫을 구해 제출하시오.';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";document.getElementById("HTML1").style.display = "none";document.getElementById("HTML10").style.display = "none";document.getElementById("HTML13").style.display = "none";document.getElementById("HTML14").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q7() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>8.</strong></font><br> 15를 4-거듭제곱한 값을 구해 제출하시오.';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";document.getElementById("HTML1").style.display = "none";document.getElementById("HTML10").style.display = "none";document.getElementById("HTML13").style.display = "none";document.getElementById("HTML14").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q8() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>9.</strong></font><br> 아래 코드를 수행한 후 변수 v에 연결된 값을 구하라.<div style="display: flex; padding: 5px 10px; line-height: 1.1em"><pre class="preBody">v=7%6+1*5/8-9//2**4</pre></div>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";document.getElementById("HTML1").style.display = "none";document.getElementById("HTML10").style.display = "none";document.getElementById("HTML13").style.display = "none";document.getElementById("HTML14").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q9() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>10.</strong></font><br> 아래 코드를 수행한 후 변수 v에 연결된 값을 구하라. 만약 계산이 불가능한 경우 문자열 "None"을 제출하라.<div style="display: flex; padding: 5px 10px; line-height: 1.1em"><pre class="preBody">v=2+6/9%(5**7*3)//1-4</pre></div>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";document.getElementById("HTML1").style.display = "none";document.getElementById("HTML10").style.display = "none";document.getElementById("HTML13").style.display = "none";document.getElementById("HTML14").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q10() {
+document.getElementById("Qs").innerHTML='';
+
+document.getElementById("Qs").style.display = "none";document.getElementById("HTML0").style.display = "none";document.getElementById("HTML1").style.display = "none";document.getElementById("HTML10").style.display = "block";document.getElementById("HTML13").style.display = "none";document.getElementById("HTML14").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q11() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>12.</strong></font><br> 64 비트(bit)으로 표현할 수 있는 최대 정수 값은 9223372036854775807 이다. 다음 합산 922337203685477580753 + 434346216596885025502을 구하라.';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";document.getElementById("HTML1").style.display = "none";document.getElementById("HTML10").style.display = "none";document.getElementById("HTML13").style.display = "none";document.getElementById("HTML14").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q12() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>13.</strong></font><br> 다음 합 7.29 + 1.33 과 8.62 와 동일한 지 아래 코드를 python online interpreter에 한 줄씩 복사/붙여 넣기해서 확인해 보라.  실행해 보고 계산결과가 기대와 동일한 지 확인하라. 만약 다르면 그 이유를 생각해 보라. 한꺼번에 복사/붙여넣기하면 오류 발생함.<div style="display: flex; padding: 5px 10px; line-height: 1.1em"><pre class="preBody">a = 8.62<br>b = 7.29<br>c = 1.33<br><font color="#900090">print</font>(a == b+c)</pre></div>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";document.getElementById("HTML1").style.display = "none";document.getElementById("HTML10").style.display = "none";document.getElementById("HTML13").style.display = "none";document.getElementById("HTML14").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q13() {
+document.getElementById("Qs").innerHTML='';
+
+document.getElementById("Qs").style.display = "none";document.getElementById("HTML0").style.display = "none";document.getElementById("HTML1").style.display = "none";document.getElementById("HTML10").style.display = "none";document.getElementById("HTML13").style.display = "block";document.getElementById("HTML14").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q14() {
+document.getElementById("Qs").innerHTML='';
+
+document.getElementById("Qs").style.display = "none";document.getElementById("HTML0").style.display = "none";document.getElementById("HTML1").style.display = "none";document.getElementById("HTML10").style.display = "none";document.getElementById("HTML13").style.display = "none";document.getElementById("HTML14").style.display = "block";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q15() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>16.</strong></font><br> 아래 코드를 실행한 후 변수 a에 최종적으로 연결된 값은 형태는 무엇인가?<div style="display: flex; padding: 5px 10px; line-height: 1.1em"><pre class="preBody">a = 21<br>a = -1.5<br>a = (0, 2, 8, 5, 7)<br>a = [4, 7, 5, 9]<br>a = "green"</pre></div>① <font color="#900090">str</font><br>② <font color="#900090">float</font><br>③ <font color="#900090">int</font><br>④ <font color="#900090">list</font><br>⑤ None of the above<br>⑥ All of the aboe';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";document.getElementById("HTML1").style.display = "none";document.getElementById("HTML10").style.display = "none";document.getElementById("HTML13").style.display = "none";document.getElementById("HTML14").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q16() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>17.</strong></font><br> 임의의 정수 한 개를 제출하시오.';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";document.getElementById("HTML1").style.display = "none";document.getElementById("HTML10").style.display = "none";document.getElementById("HTML13").style.display = "none";document.getElementById("HTML14").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q17() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>18.</strong></font><br> 임의의 실수 한 개를 제출하시오.';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";document.getElementById("HTML1").style.display = "none";document.getElementById("HTML10").style.display = "none";document.getElementById("HTML13").style.display = "none";document.getElementById("HTML14").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q18() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>19.</strong></font><br> 임의의 문자열 한 개를 제출하시오.';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";document.getElementById("HTML1").style.display = "none";document.getElementById("HTML10").style.display = "none";document.getElementById("HTML13").style.display = "none";document.getElementById("HTML14").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+
+document.onkeydown = function (e) {
+  if (e.altKey && e.keyCode == 39) {
+    Qnumber += 1;
+    if (Qnumber>Qmax) {Qnumber = 0};
+    eval("display_Q"+Qnumber+"()");}
+  else if (e.altKey && e.keyCode == 37) {
+    Qnumber -= 1;
+    if (Qnumber<0) {Qnumber = Qmax};
+    eval("display_Q"+Qnumber+"()");}
+}
+var Qnumber = 0;
+var Qmax = 18;
+display_Q0();</script>
+</body>
+</html>
