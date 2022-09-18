@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Exercise J0919x12345678 홍길동</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+.prePrompt {float: left; margin: 20px   0px 20px 10px; padding: 10px   5px 10px   5px; background: #efc; font-family: bold Courier New; font-size: 14px; line-height: 0.5 em; width: 30px;              text-align: left; border: 1px solid powderblue; border-right: none; color: #700;}
+.preBody     {float: left; margin: 20px 10px 20px   0px; padding: 10px 10px 10px 10px; background: #efc; font-family: bold Courier New; font-size: 14px; line-height: 0.5 em; width: text-content; text-align: left; border: 1px solid powderblue; }
+</style>
+</head>
+<body style="word-break:keep-all; display: block; font-family: malgun;  font-size: 18px;">
+<center><h4>Exercise J0919x12345678 홍길동</h4></center><ul style="font-size: 14px">
+<li>답이 숫자인 경우, 가장 중요한 3개의 숫자로 반올림한다. For numeric answers, round answer to the 3 most significant digits.</li>
+<li>숫자를 문자열로 제출하는 경우, 양쪽에 따옴표를 붙인다. To submit a numeric string, use quotes to contain the answer.</li></ul>
+<table>
+<tbody>
+<tr>
+<td ><button onclick="saveTextAsFile()" style="font-family: malgun;  font-size: 20px">Save<br>Answers<br>to File</button></td>
+<td><textarea id="inputTextToSave" cols="155" rows="5" style="font-family: malgun;  font-size: 16px">
+나, 홍길동은(는) 위 내용을 읽고 아래 답을 직접 작성했음을 확인합니다. I, 홍길동, confirm that I read the notes above and wrote the answer myself below.
+--------------------------------------------------------------------------------------------------------------------
+1: 
+2: 
+3: 
+4: 
+5: 
+6: 
+7: 
+8: 
+9: 
+10: 
+11: 
+12: 
+13: 
+14: 
+15: 
+16: 
+17: 
+18: 
+19: 
+20: 
+21: </textarea></td></tr></tbody></table><input type="button" onclick="javascript:display_Q0();" value="Q-1" /> &emsp;
+<input type="button" onclick="javascript:display_Q1();" value="Q-2" /> &emsp;
+<input type="button" onclick="javascript:display_Q2();" value="Q-3" /> &emsp;
+<input type="button" onclick="javascript:display_Q3();" value="Q-4" /> &emsp;
+<input type="button" onclick="javascript:display_Q4();" value="Q-5" /> &emsp;
+<input type="button" onclick="javascript:display_Q5();" value="Q-6" /> &emsp;
+<input type="button" onclick="javascript:display_Q6();" value="Q-7" /> &emsp;
+<input type="button" onclick="javascript:display_Q7();" value="Q-8" /> &emsp;
+<input type="button" onclick="javascript:display_Q8();" value="Q-9" /> &emsp;
+<input type="button" onclick="javascript:display_Q9();" value="Q-10" /> &emsp;
+<input type="button" onclick="javascript:display_Q10();" value="Q-11" /> &emsp;
+<input type="button" onclick="javascript:display_Q11();" value="Q-12" /> &emsp;
+<input type="button" onclick="javascript:display_Q12();" value="Q-13" /> &emsp;
+<input type="button" onclick="javascript:display_Q13();" value="Q-14" /> &emsp;
+<input type="button" onclick="javascript:display_Q14();" value="Q-15" /> &emsp;
+<input type="button" onclick="javascript:display_Q15();" value="Q-16" /> &emsp;
+<input type="button" onclick="javascript:display_Q16();" value="Q-17" /> &emsp;
+<input type="button" onclick="javascript:display_Q17();" value="Q-18" /> &emsp;
+<input type="button" onclick="javascript:display_Q18();" value="Q-19" /> &emsp;
+<input type="button" onclick="javascript:display_Q19();" value="Q-20" /> &emsp;
+<input type="button" onclick="javascript:display_Q20();" value="Q-21" /> &emsp;
+<hr> <div id="Qs" style="word-break:keep-all; padding: 0px 20px 10px 20px; background-color: #eee; border: 1px solid #999; display: block; font-family: malgun;  font-size: 18px;"></div>
+<canvas id="canvas" width="800" height="0"></canvas>
+<div id="HTML0" style="word-break:keep-all; padding: 0px 20px 10px 20px; background-color: #f2f6fc; border: 1px solid #999; display: block; font-family: malgun;  font-size: 18px;line-height: 1.5em; display=none;"><center><h3>Python 리스트 (list)</h3></center>
+<li><b>Python의 리스트</b></li>
+<ul><li>한 개의 값(value; object)으로써 [와 ]으로 둘러싸인 값으로 구분된다.</li>
+<li> 비워 있을 수도 있으며, 한 개의 예를 들어 또 다른 리스트가 들어있을 수도 있을 뿐만 아니라 한 개 이상의 또 다른 형태의 데이터들로 구성되어 있을 수도 있다.</li>
+<li>구성 요소들은 쉼표(, comma)로 구분된다.</li>
+<li>구성 요소 중 일부를 뺄 수도 있으며, 새로운 구성 요소를 추가할 수도 있으며, 구성 요소 일부를 수정도 할 수 있으며, 등등 모든 기능이 허락된다.</li>
+
+<div style="display: flex; justify-content: center; padding: 5px 10px; line-height: 0.6em">
+<pre class="prePrompt">
+<font color="#700">&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;</font></pre>
+<pre class="preBody">
+a = [1, [], 5.3]<br>
+a.insert(1, <font color="#00aa00">"me? string!"</font>)<br>
+a<br>
+<font color="#0000ff">[1, "me? string!", [], 5.3]</font><br>
+a += a<br>
+a<br>
+<font color="#0000ff">[1, "me? string!", [], 5.3, 1, "me? string!", [], 5.3]</font><br>
+a.pop(3)<br>
+<font color="#0000ff">5.3</font><br>
+a<br>
+<font color="#0000ff">[1, "me? string!", [], 1, "me? string!", [], 5.3]</font><br>
+a *= 2<br>
+<font color="#900090">print</font>(a)<br>
+<font color="#0000ff">[1, "me? string!", [], 1, "me? string!", [], 5.3, 1, "me? string!", [], 1, "me? string!", [], 5.3]</font></pre>
+</div></ul>
+
+<li><b>리스트와 사칙연산</b></li>
+<ul><li>위 코드를 보면 리스트에 리스트를 더하는 것은 허락되는 사칙연산이다.</li>
+<ul><li>합하는 두 리스트를 순서데로 합해서 본래 리스트의 구성 요소 수가 늘어난다.</li></ul>
+<li>리스트에 정수를 곱하는 것도 허락되는 연산이다.</li>
+<ul><li>본래 리스트를 정수만큼 복사해서 추가하여 본래 리스트의 구성 요소 수가 늘어난다.</li></ul>
+<li>위 코드를 다시 한 번 유심히 살펴보면 합셈과 곱셈 연산을 실행한 후 아무런 반환값이 없음을 볼 수 있다. 본래 리스트 내용이 바뀌었을뿐 반환하는 값이 없다는 사실을 다시 한번 곰곰히 따져 보라.</li>
+</ul>
+<br>
+<li><b>dot 표기법</b></li>
+<ul><li>위 코드에는 숫자만을 다룬 코드에서는 볼 수 없었던 새로운 표기법이 보이고 있다.</li>
+<li>앞서 기술한데로 Python의 리스트는 구성 요소의 변경이 가능한 object이기 때문에 이 기능에 걸맞는 내장함수 (method)가 함께 따라온다는 사실이다.</li>
+<ul><li>사실 정수와 실수 모두 내장함수가 따라오는 object들이지만 전혀 다루지 않았다는 정도만 알고 넘어가자.</li></ul>
+<li>위 코드 첫줄은 이름이 a인 변수에 3 개의 데이터들로 구성된 리스트를 연결하였다. </li>
+<ul><li>위 표현은 바로 리스트 object 한 개를 생성했다는 뜻이다.</li>
+<li>생성된 리스트 object의 보다 정확한 표현은 리스트 object의 instance를 한 개 생성했다는 뜻이다.</li></ul>
+<li>리스트 object의 instance 생성에 관해서는 추후 class 관련되 참고문헌을 참고하라. 여기서는 몰라도 된다.</li>
+<li>리스트 object에 이미 추가로 제공된 다양한 method들이 있으며 이들을 새로 막 만든 변수에 연결해서 사용이 가능하다.</li>
+<li>사용 가능한 method들의 목록을 보려면 Python built-in function <font color="#900090">dir</font>()를 이용한다.</li>
+
+<div style="display: flex; justify-content: center; padding: 5px 10px; line-height: 0.6em">
+<pre class="prePrompt">
+<font color="#700">&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;</font></pre>
+<pre class="preBody">
+a = [1, [], 5.3]<br>
+<font color="#900090">type</font>(a)<br>
+<font color="#0000ff">&lt;class 'list'&gt;</font><br>
+<font color="#900090">dit</font>(a)<br>
+<font color="#0000ff">['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__',<br>
+'__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__',<br>
+'__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__',<br>
+'__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove',<br>
+'reverse', 'sort']</font></pre></div>
+
+<li>위 코드은 바로 리스트 object의 attribute들의 총 목록을 보여준 것으로 리스트 object와 관련된 내장함수를 보려면 좀 더 세련된 코드를 사용할 수도 있지만 그 내용은 나중에 살펴보기로 하고 여기서는 목록만 살펴보자.</li></ul>
+
+<li><b>리스트 내장함수 목록</b></li>
+<ul>
+<center><table style="border-collapse: collapse; border: 1px solid #dddddd;">
+  <tr>
+    <th style="border: 1px solid #dddddd; padding: 8px;">method</th>
+    <th style="border: 1px solid #dddddd; padding: 8px;">설명</th>
+    <th style="border: 1px solid #dddddd; padding: 8px;">반환 유/무</th>
+  </tr>
+  <tr style="background-color: #dddddd;">
+    <td style="border: 1px solid #dddddd; padding: 8px;">append(obj)</td>
+    <td style="border: 1px solid #dddddd; padding: 8px;">리스트 뒤에 주어진 값(obj) 추가</td>
+    <td style="border: 1px solid #dddddd; padding: 8px;">무</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">clear()</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">리스트 구성요소 모두 삭제</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">무</td>
+  </tr>
+  <tr style="background-color: #dddddd;">
+    <td style="border: 1px solid #dddddd;  padding: 8px;">copy()</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">본래 리스트의 shallow 복사본 반환</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">유</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">count(value)</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">리스트 구성요소들 중 value의 횟수</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">유</td>
+  </tr>
+  <tr>
+  <tr style="background-color: #dddddd;">
+    <td style="border: 1px solid #dddddd;  padding: 8px;">extend(iterable)</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">값 여러 개를 리스트에 추가</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">무</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">index(value)</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">리스트 구성 요소들 중 value의 첫번째 순서번호 반환</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">유</td>
+  </tr>
+  <tr>
+  <tr style="background-color: #dddddd;">
+    <td style="border: 1px solid #dddddd;  padding: 8px;">insert(index, obj)</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">주어진 순서번호(index)에 obj 삽입</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">무</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">pop(index=-1)</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">주어진 순서번호(index, 맨 마지막 기본)에 위치한 구성요소 제거하고 반환</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">유</td>
+  </tr>
+  <tr>
+  <tr style="background-color: #dddddd;">
+    <td style="border: 1px solid #dddddd;  padding: 8px;">remove(value)</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">구성요소들 중 첫번째 value 제거</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">무</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">reverse()</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">구성요소 순서를 뒤집는다</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">무</td>
+  </tr>
+  <tr>
+  <tr style="background-color: #dddddd;">
+    <td style="border: 1px solid #dddddd;  padding: 8px;">sort(*, reverse=<font color="#ff7700">True</font>)</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">구성요소의 오름차순 정렬 (또는 내림차순 정렬)</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">무</td>
+  </tr>
+</table>
+</center>
+<li>위 테이블에서 보듯이  내장함수를 사용할 때는 반드시 괄호 (와 )를 사용한다 (이유는 내장함수는 함수들이기 때문).</li>
+<li>내장함수에 따라 값을 반환하지 않는 경우, 실제로 <font color="#ff7700">None</font>을 반환한다.</li>
+<li>위 내장함수를 아는만큼 리스트를 멋지게 활용할 수 있다.</li>
+<ul><li> 하지만 외우려고 고생하지 말고 시간이 흘러 손가락이 익히도록 연습을 많이 하기를 권한다.</li></ul></ul>
+<br>
+<li><b>indexing</b></li>
+<ul><li>앞에서 "순서번호"와 "index" 용어를 여러 군데 사용하였다. 두 용어는 동일하다.</li>
+<li>두 용어는 리스트 사용할 때 가장 기초적인 내용으로 리스트 구성요소의 순서를 가리킨다.</li>
+<li>구성요소 순서 표기에는 positive indexing과 negative indexing의 두 가지 방법이 있다</li>
+<ul><li>positive indexing: 맨 앞의 구성요소를 0-번째 그 다음 구성 요소는 1-번째 등으로 표기하는 순서</li>
+<li>negative indexing: 맨 뒤의 구성요소를 (-1)-번째, 뒤에서 두 번째 구성요소는 (-2)-번째로 표기하는 순서</li>
+<li>positive indexing으로 맨 뒤의 구성요소는 리스트 구성요소의 갯수보다 항상 1만큼 작다.</li>
+<li>negative indexing으로 맨 앞의 구성요소는 리스트 구성요소의 갯수에 음수를 곱한 값이다.</li></ul>
+<li>리스트 구성요소의 순서는 항상 두 가지 방법으로 표기 가능하며, 필요에 따라 적절히 섞어서 사용할 수 있는 편리함이 있다.</li></ul>
+<br>
+<li><b>slicing</b></li>
+<ul><li>내장함수만큼 기초적으로 많이 활용되는 내용으로, 리스트 구성요소 일부분을 복사해 오거나, 바꿀 때마다 필요한 내용이다.</li>
+<div style="display: flex; justify-content: center; padding: 5px 10px; line-height: 0.6em">
+<pre class="prePrompt">
+<font color="#700">&gt;&gt;&gt;</font><br>
+<font color="#700">&gt;&gt;&gt;</font><br>
+<br>
+<font color="#700">&gt;&gt;&gt;</font><br>
+<br>
+<font color="#700">&gt;&gt;&gt;</font><br>
+<br>
+<font color="#700">&gt;&gt;&gt;</font><br>
+<br>
+<font color="#700">&gt;&gt;&gt;</font><br>
+<br>
+<font color="#700">&gt;&gt;&gt;</font><br>
+<br>
+<font color="#700">&gt;&gt;&gt;</font></pre>
+<pre class="preBody">
+a = [5, 3, 10, 25, 20]<br>
+a[2:4]<br>
+<font color="#0000ff">[10, 25]</font><br>
+a[2:]<br>
+<font color="#0000ff">[10, 25, 20]</font><br>
+a[:3]<br>
+<font color="#0000ff">[5, 3, 10]</font><br>
+a[-2:]<br>
+<font color="#0000ff">[25, 20]</font><br>
+a[:-3]<br>
+<font color="#0000ff">[5, 3]</font><br>
+a[:-1]<br>
+<font color="#0000ff">[5, 3, 10, 25]</font><br>
+a[:]<br>
+<font color="#0000ff">[5, 3, 10, 25, 20]</font></pre>
+</div>
+<li>구성요소 일부분을 지정하려면 기본적으로 콜론(colon) 기호 :로 구분된 시작번호와 끝번호 두 개의 번호가 필요하다.</li>
+<ul><li>시작번호 끝번호 사이에 들어있는 모든 구성요소를 뜻한다.</li>
+<li>시작번호를 생략하는 경우는 맨 앞부터 시작하는 것을 뜻하며,</li>
+<li>끝번호가 생략된 경우는 맨 끝까지를 뜻한다.</li>
+<li>만약 시작번호와 끝번호 모두 생략되었다면, 위 코드 맨 마지막 경우와 같이, 당연히 처음부터 끝까지, 구성요소 전부를 뜻한다.</li></ul>
+<li>만약 시작번호와 끝번호와 함께 그 사이 모든 구성요소 대신 일부분만을 다루고 싶은 경우:</li>
+<ul><li>아래 코드와 같이 콜론기호 2 개를 사용하여 맨 끝에 간격을 뜻하는 정수를 추가한다.</li>
+<div style="display: flex; justify-content: center; padding: 5px 10px; line-height: 0.6em">
+<pre class="prePrompt">
+<font color="#700">&gt;&gt;&gt;</font><br>
+<font color="#700">&gt;&gt;&gt;</font><br>
+<br>
+<font color="#700">&gt;&gt;&gt;</font><br>
+<br>
+<font color="#700">&gt;&gt;&gt;</font></pre>
+<pre class="preBody">
+a = [5, 3, 10, 25, 20]<br>
+a[::2] <font color="#dd0000"># 짝수번째 순서번호의 구성요소</font><br>
+<font color="#0000ff">[5, 10, 20]</font><br>
+a[1::2] <font color="#dd0000"># 홀수번째 순서번호의 구성요소</font><br>
+<font color="#0000ff">[3, 25]</font><br>
+a[::-1] <font color="#dd0000"># 순서를 뒤집은 리스트</font><br>
+<font color="#0000ff">[20, 25, 10, 3, 5]</font></pre></div>
+
+<li>slicing이란 본래 리스트의 일부분를 갖고오는 방법이기 때문에 본래 리스트는 전혀 변화가 없다.</li></ul></ul>
+
+<li><b>리스트와 Python built-in function</b></li>
+<ul><li>리스트에 적용할 수 있는 몇 가지 Python built-in function들을 살펴보자.</li>
+<div style="display: flex; justify-content: center; padding: 5px 10px; line-height: 0.6em">
+<pre class="prePrompt">
+<font color="#700">&gt;&gt;&gt;</font><br>
+<font color="#700">&gt;&gt;&gt;</font><br>
+<br>
+<font color="#700">&gt;&gt;&gt;</font><br>
+<br>
+<font color="#700">&gt;&gt;&gt;</font><br>
+<br>
+<font color="#700">&gt;&gt;&gt;</font></pre>
+<pre class="preBody">
+a = [5, 3, 10, 25, 20]<br>
+<font color="#900090">print</font>(a)<br>
+<font color="#0000ff">[5, 3, 10, 25, 20]</font><br>
+<font color="#900090">len</font>(a)<br>
+<font color="#0000ff">5</font><br>
+<font color="#900090">sorted</font>(a)<br>
+<font color="#0000ff">[3, 5, 10, 20, 25]</font><br>
+<font color="#900090">sorted</font>(a, reverse = <font color="#ff7700">True</font>)<br>
+<font color="#0000ff">[25, 20, 10, 5, 3]</font></pre></div>
+<li>위 코드에 사용된 built-in function <font color="#900090">sorted</font>의 사용법과 리스트의 내장함수 sort()의 사용법의 차이점을 익혀둘 필요가 있다.</li>
+<ul><li>리스트의 내장함수 sort()을 사용하면 반환 값이 없는 대신 해당 리스트가 바뀌며,</li>
+<li>built-in function <font color="#900090">sorted</font>을 사용하면 정렬된 리스트가 반환된 반면 본래 리스트는 변함이 없다.</li></ul></div><script type="text/javascript">
+function saveTextAsFile() {
+    var textToSave = document.getElementById("inputTextToSave").value;
+    var textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});
+    var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
+    var fileNameToSaveAs = "J0919x12345678.txt"
+
+    var downloadLink = document.createElement("a");
+    downloadLink.download = fileNameToSaveAs;
+    downloadLink.innerHTML = "Download File";
+    downloadLink.href = textToSaveAsURL;
+    downloadLink.onclick = destroyClickedElement;
+    downloadLink.style.display = "none";
+    document.body.appendChild(downloadLink);
+
+    downloadLink.click();
+}
+
+function destroyClickedElement(event) {
+    document.body.removeChild(event.target);
+}
+</script>
+<script type="application/javascript">
+function display_Q0() {
+document.getElementById("Qs").innerHTML='';
+
+document.getElementById("Qs").style.display = "none";document.getElementById("HTML0").style.display = "block";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q1() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>2.</strong></font><br> 아래 data에 표시된 리스트에 들어있는 값들 중 [41, 19, 91, 54, 52, 32] 값들의 갯수들로 구성된 리스트를 구한 후, 그 중 가장 작은 값에 해당하는 [41, 19, 91, 54, 52, 32] 값이 data에 표시된 리스트에 첫번째로 나타나는 순서번호를 구하라. <br><b>예시:</b> [1, 2, 1, 2, 1]에는 [1,2]의 값들이 [3, 2]-개씩 들어있으므로, 2이 가장 작기 때문에 3에 해당하는 2이므로 2가 첫번째로 나타나는 순서번호는 1이다.<br><b>DATA:</b><br>[52, 41, 52, 52, 91, 52, 91, 91, 52, 54, 52, 32, 52, 41, 54, 32, 91, 52, 32, 32, 19, 19, 19, 32, 41, 91, 32, 41, 19, 32, 91, 52, 41, 54, 54, 19, 52, 41, 32, 32, 54, 41, 91, 52, 54, 52, 54, 19, 54, 52, 91, 91, 91, 41, 54, 32, 41, 32, 32, 91, 32, 52, 54, 91, 91, 52, 41, 19, 52, 41, 32, 19, 52, 32, 32, 54, 32, 52, 54, 19, 32, 54, 19, 41, 91, 91, 32, 19, 54]';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q2() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>3.</strong></font><br> 아래 data에 표시된 리스트를 이용하여 예시와 같이 주어진 리스트의 짝수 순서번호의 값들만 이용하여 새로운 긴 리스트를 구하라. 예시 a = [5, 3, 10, 25, 20] --> [5, 10, 20, 20, 10, 5]<br><b>DATA:</b><br>[90, 19, 33, 84, 96, 39, 56, 76, 23, 75, 27, 32, 52, 40, 36, 17, 29, 65]';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q3() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>4.</strong></font><br> 아래 data에 표시된 리스트를 이용하여 예시와 같이 주어진 리스트의 홀수 순서번호의 값들로 이루어진 리스트에 짝수 순서번호의 값들을 역순으로 만든 리스트를 합한 긴 리스트를 구하라. 예시 a = [5, 3, 10, 25, 20] --> [3, 25] + [20, 10, 5] --> [3, 25, 20, 10, 5]<br><b>DATA:</b><br>[58, 33, 31, 41, 83, 23, 74, 61, 24, 60, 37, 26, 51, 76, 66, 84]';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q4() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>5.</strong></font><br> 아래 data에 표시된 리스트를 이용하여 예시와 같은 새로운 긴 리스트를 구하라. 구해진 리스트의 순서번호가 짝수인 값들로 구성된 리스트를 구하라. 예시 a = [5, 3, 10, 25, 20]. --> [5, 3, 10, 25, 20, 20, 25, 10, 3, 5]<br><b>DATA:</b><br>[45, 59, 54, 58, 78, 41, 65, 60, 35, 26, 88, 99, 44, 77, 51]';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q5() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>6.</strong></font><br> 아래 data에 표시된 리스트를 이용하여 예시와 같은 새로운 긴 리스트를 구하라. 구해진 리스트의 순서번호가 홀수인 값들의 갯수를 구하라. 예시 a = [5, 3, 10, 25, 20]. --> [5, 3, 10, 25, 20, 20, 25, 10, 3, 5<br><b>DATA:</b><br>[34, 84, 93, 97, 47, 25, 55, 28, 99, 83, 87, 35, 74, 29, 61, 24, 54, 75, 12, 57, 96, 86, 90, 85, 78, 19, 52]';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q6() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>7.</strong></font><br> 아래 data에 표시된 리스트를 이용하여 예시와 같은 새로운 긴 리스트를 구하라. 구해진 리스트의 순서번호가 홀수인 값들을 오름차순으로 정렬한 리스트를 구하라. 예시 a = [5, 3, 10, 25, 20]. --> [5, 3, 10, 25, 20, 20, 25, 10, 3, 5<br><b>DATA:</b><br>[87, 16, 89, 73, 67, 14, 78, 20, 32, 57, 42, 74, 49, 21, 51, 83, 12, 90, 18, 30, 38, 61, 22, 65, 99, 60, 98, 27]';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q7() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>8.</strong></font><br> 아래 data에 표시된 리스트를 이용하여 예시와 같은 새로운 긴 리스트를 구하라. 구해진 리스트의 순서번호가 홀수인 값들을 내림차순으로 정렬한 리스트를 구하라. 예시 a = [5, 3, 10, 25, 20]. --> [5, 3, 10, 25, 20, 20, 25, 10, 3, 5<br><b>DATA:</b><br>[86, 84, 46, 50, 32, 16, 21, 62, 81, 67, 87, 18, 51, 30, 39, 36, 35, 47, 52, 93, 25, 60, 55, 54, 27, 89, 45]';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q8() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>9.</strong></font><br> 아래 data에 표시된 리스트를 이용하여 예시와 같은 새로운 긴 리스트를 구하라. 구해진 리스트의 순서번호가 짝수인 값들을 내림차순으로 정렬한 리스트를 구한 후, 18-번째 값을 구하라. 예시 a = [5, 3, 10, 25, 20]. --> [5, 3, 10, 25, 20, 20, 25, 10, 3, 5]<br><b>DATA:</b><br>[84, 46, 11, 96, 38, 28, 66, 43, 75, 51, 64, 29, 87, 26, 24, 31, 58, 23, 33, 39, 20, 69, 37, 44, 10, 17, 78, 49]';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q9() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>10.</strong></font><br> 아래 data에 표시된 리스트를 이용하여 예시와 같은 새로운 긴 리스트를 구하라. 구해진 리스트의 순서번호가 홀수인 값들을 내림차순으로 정렬한 리스트를 구한 후, (-13)-번째 값을 구하라. 예시 a = [5, 3, 10, 25, 20]. --> [5, 3, 10, 25, 20, 20, 25, 10, 3, 5<br><b>DATA:</b><br>[68, 90, 39, 71, 69, 43, 20, 62, 47, 72, 98, 29, 44, 18, 87, 79, 51, 92, 45, 63, 33, 89, 32, 70, 88]';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q10() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>11.</strong></font><br> 다음 리스트의 순서번호(index) 9에 해당하는 값을 구하라.<pre class="preCode">[&#39;vBA&#39;, 10, &#39;vAC&#39;, 12.0, &#39;vDA&#39;, -2.6, 999, [10, &#39;vBA&#39;, -2.6], 0, &#39;#&#39;]</pre>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q11() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>12.</strong></font><br> 다음 리스트에 들어있는 값 vAC의 negative 순서번호(index)를 구하라. 값이 문자이면 문자열을 뜻함.<pre class="preCode">[&#39;vBA&#39;, 10, &#39;vAC&#39;, 12.0, &#39;vDA&#39;, -2.6, 999, [10, &#39;vBA&#39;, -2.6], 0, &#39;#&#39;]</pre>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q12() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>13.</strong></font><br> 리스트 <font face="Courier New">area = [76, 48, 10, 0, 25, 83, 40, 87, 97, 72, 32]</font>에 대해 <font face="Courier New">area[4:10]</font>를 구하라.';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q13() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>14.</strong></font><br> 리스트 <font face="Courier New">vvE = [92, 34, 99, 6, 64, 85, 21, 78]</font>에 대해 <font face="Courier New">vvE[3:]</font>를 구하라.';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q14() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>15.</strong></font><br> 리스트 <font face="Courier New">vvD = [8, 46, 92, 30, 38, 11, 23, 83]</font>에 대해 <font face="Courier New">vvD[:6]</font>를 구하라.';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q15() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>16.</strong></font><br> 리스트 <font face="Courier New">vvB = [50, 21, 76, 79, 30]</font>에 대해 <font face="Courier New">vvB[-1:]</font>를 구하라.';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q16() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>17.</strong></font><br> 리스트 <font face="Courier New">aRea = [29, 40, 36, 73, 26]</font>에 대해 <font face="Courier New">aRea[:-4]</font>를 구하라.';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q17() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>18.</strong></font><br> 다음 선택사항 중 변수이름이 a인 리스트의 element 갯수를 구하는 옳은 표현식은?<p style = "font-family:Courier New; border: solid black; border-width: thin; padding: 5px 20px; width: fit-content">① <font color="#900090">all</font>(a)<br>② <font color="#900090">max</font>(a)<br>③ <font color="#900090">len</font>(a)<br>④ <font color="#900090">any</font>(a)<br>⑤ <font color="#900090">sorted</font>(a, reverse=<font color="#ff7700">True</font>)<br>⑥ <font color="#900090">sorted</font>(a)<br>⑦ None of the above<br>⑧ All of the aboe</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q18() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>19.</strong></font><br> 다음 선택사항 중 변수이름이 a인 리스트를 오름차순으로 정렬한 리스트를 구하는 옳은 표현식은?<p style = "font-family:Courier New;font-size:16px;background:#eee">① <font color="#900090">max</font>(a)<br>② <font color="#900090">len</font>(a)<br>③ <font color="#900090">min</font>(a)<br>④ <font color="#900090">sum</font>(a)<br>⑤ <font color="#900090">any</font>(a)<br>⑥ <font color="#900090">sorted</font>(a)<br>⑦ None of the above<br>⑧ All of the aboe</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q19() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>20.</strong></font><br> 다음 선택사항 중 변수이름이 a인 리스트의 항목 중 최대값을 구하는 옳은 표현식은?<p style = "font-family:Courier New;font-size:16px;background:#eee">① <font color="#900090">len</font>(a)<br>② <font color="#900090">sorted</font>(a)<br>③ <font color="#900090">sum</font>(a)<br>④ <font color="#900090">any</font>(a)<br>⑤ <font color="#900090">max</font>(a)<br>⑥ <font color="#900090">min</font>(a)<br>⑦ None of the above<br>⑧ All of the aboe</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q20() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>21.</strong></font><br> 다음 선택사항 중 변수이름이 a인 리스트의 항목 모두 참(<font color="#ff7700">True</font>)인지 구하는 옳은 표현식은?<p style = "font-family:Courier New;font-size:16px;background:#eee">① <font color="#900090">any</font>(a)<br>② <font color="#900090">min</font>(a)<br>③ <font color="#900090">sorted</font>(a, reverse=<font color="#ff7700">True</font>)<br>④ <font color="#900090">sorted</font>(a)<br>⑤ <font color="#900090">all</font>(a)<br>⑥ <font color="#900090">sum</font>(a)<br>⑦ None of the above<br>⑧ All of the aboe</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+
+document.onkeydown = function (e) {
+  if (e.altKey && e.keyCode == 39) {
+    Qnumber += 1;
+    if (Qnumber>Qmax) {Qnumber = 0};
+    eval("display_Q"+Qnumber+"()");}
+  else if (e.altKey && e.keyCode == 37) {
+    Qnumber -= 1;
+    if (Qnumber<0) {Qnumber = Qmax};
+    eval("display_Q"+Qnumber+"()");}
+}
+var Qnumber = 0;
+var Qmax = 20;
+display_Q0();</script>
+</body>
+</html>
