@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Exercise J0926x42222086 이인호</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+.prePrompt {float: left; margin: 20px   0px 20px 10px; padding: 10px   5px 10px   5px; background: #efc; font-family: bold Courier New; font-size: 14px; line-height: 0.5 em; width: 30px;              text-align: left; border: 1px solid powderblue; border-right: none; color: #700;}
+.preBody     {float: left; margin: 20px 10px 20px   0px; padding: 10px 10px 10px 10px; background: #efc; font-family: bold Courier New; font-size: 14px; line-height: 0.5 em; width: text-content; text-align: left; border: 1px solid powderblue; }
+</style>
+</head>
+<body style="word-break:keep-all; display: block; font-family: malgun;  font-size: 18px;">
+<center><h4>Exercise J0926x42222086 이인호</h4></center><ul style="font-size: 14px">
+<li>답이 숫자인 경우, 가장 중요한 3개의 숫자로 반올림한다. For numeric answers, round answer to the 3 most significant digits.</li>
+<li>숫자를 문자열로 제출하는 경우, 양쪽에 따옴표를 붙인다. To submit a numeric string, use quotes to contain the answer.</li></ul>
+<table>
+<tbody>
+<tr>
+<td ><button onclick="saveTextAsFile()" style="font-family: malgun;  font-size: 20px">Save<br>Answers<br>to File</button></td>
+<td><textarea id="inputTextToSave" cols="155" rows="5" style="font-family: malgun;  font-size: 16px">
+나, 이인호은(는) 위 내용을 읽고 아래 답을 직접 작성했음을 확인합니다. I, 이인호, confirm that I read the notes above and wrote the answer myself below.
+--------------------------------------------------------------------------------------------------------------------
+1: 
+2: 
+3: 
+4: 
+5: 
+6: 
+7: 
+8: 
+9: 
+10: 
+11: 
+12: 
+13: 
+14: 
+15: 
+16: 
+17: 
+18: 
+19: 
+20: 
+21: 
+22: 
+23: 
+24: 
+25: 
+26: 
+27: 
+28: </textarea></td></tr></tbody></table><input type="button" onclick="javascript:display_Q0();" value="Q-1" /> &emsp;
+<input type="button" onclick="javascript:display_Q1();" value="Q-2" /> &emsp;
+<input type="button" onclick="javascript:display_Q2();" value="Q-3" /> &emsp;
+<input type="button" onclick="javascript:display_Q3();" value="Q-4" /> &emsp;
+<input type="button" onclick="javascript:display_Q4();" value="Q-5" /> &emsp;
+<input type="button" onclick="javascript:display_Q5();" value="Q-6" /> &emsp;
+<input type="button" onclick="javascript:display_Q6();" value="Q-7" /> &emsp;
+<input type="button" onclick="javascript:display_Q7();" value="Q-8" /> &emsp;
+<input type="button" onclick="javascript:display_Q8();" value="Q-9" /> &emsp;
+<input type="button" onclick="javascript:display_Q9();" value="Q-10" /> &emsp;
+<input type="button" onclick="javascript:display_Q10();" value="Q-11" /> &emsp;
+<input type="button" onclick="javascript:display_Q11();" value="Q-12" /> &emsp;
+<input type="button" onclick="javascript:display_Q12();" value="Q-13" /> &emsp;
+<input type="button" onclick="javascript:display_Q13();" value="Q-14" /> &emsp;
+<input type="button" onclick="javascript:display_Q14();" value="Q-15" /> &emsp;
+<input type="button" onclick="javascript:display_Q15();" value="Q-16" /> &emsp;
+<input type="button" onclick="javascript:display_Q16();" value="Q-17" /> &emsp;
+<input type="button" onclick="javascript:display_Q17();" value="Q-18" /> &emsp;
+<input type="button" onclick="javascript:display_Q18();" value="Q-19" /> &emsp;
+<input type="button" onclick="javascript:display_Q19();" value="Q-20" /> &emsp;
+<input type="button" onclick="javascript:display_Q20();" value="Q-21" /> &emsp;
+<input type="button" onclick="javascript:display_Q21();" value="Q-22" /> &emsp;
+<input type="button" onclick="javascript:display_Q22();" value="Q-23" /> &emsp;
+<input type="button" onclick="javascript:display_Q23();" value="Q-24" /> &emsp;
+<input type="button" onclick="javascript:display_Q24();" value="Q-25" /> &emsp;
+<input type="button" onclick="javascript:display_Q25();" value="Q-26" /> &emsp;
+<input type="button" onclick="javascript:display_Q26();" value="Q-27" /> &emsp;
+<input type="button" onclick="javascript:display_Q27();" value="Q-28" /> &emsp;
+<hr> <div id="Qs" style="word-break:keep-all; padding: 0px 20px 10px 20px; background-color: #eee; border: 1px solid #999; display: block; font-family: malgun;  font-size: 18px;"></div>
+<canvas id="canvas" width="800" height="0"></canvas>
+<div id="HTML0" style="word-break:keep-all; padding: 0px 20px 10px 20px; background-color: #f2f6fc; border: 1px solid #999; display: block; font-family: malgun;  font-size: 18px;line-height: 1.5em; display=none;"><center><h3>Python과 문자열 (string)</h3></center>
+<li><b>문자열</b></li>
+<ul><li>글로 적힌 모든 내용은 문자열이다.</li>
+<li>숫자도 파일에 적혀있다면 본래 문자열이며, 단지 사용되는 프로그램이 우리를 위해 중간에 숫자로 변환해 주었을 뿐이다.</li>
+<li>인터넷의 web-page/app-page 모두 문자열로 구성되어있다.</li>
+<li>인터넷에서 얻을 수 있는 모든 자료는 기본적으로 문자열이다.</li>
+<ul><li>일부 파일은 파일 크기를 최소화하기 위해 binary로 변환된 경우도 있다.</li></ul>
+<li>인터넷으로부터 얻은 자료를 분석하고 처리하고 사용하기 위해서는 반드시 문자열 자료를 원하는 데로 처리할 수 있어야 한다.</li>
+<li>문자열 관련 처리 기능이 다양한 언어 중 하나가 python이다.</li></ul>
+<li><b>문자열과 Python</b></li>
+<ul><li>한 개의 값(value; object)으로써 따옴표(세 가지)로 둘러싸인 값이다.</li>
+<ul><li>따옴표로 둘러싸인 모든 것은 문자열이다.</li></ul>
+<li> 빈 문자열도 있을 수 있으나 숫자들처럼 절대 바꿀 수 없다.</li>
+<ul><li>표현-바꿀 수 없다-의 의미는 나중에 살펴보자.</li></ul>
+
+<div style="display: flex; justify-content: center; padding: 5px 10px; line-height: 0.6em">
+<pre class="prePrompt">
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;</pre>
+<pre class="preBody">
+a = <font color="#00aa00">""</font> <font color="#dd0000"># 빈 문자열</font><br>
+a = <font color="#00aa00">"I&#39;m a string."</font><br>
+a = <font color="#00aa00">&#39;Here is another string, "me, too".&#39;</font><br>
+a = <font color="#00aa00">&#39;&#39;&#39;Me, three. ~~~~~ &#39;&#39;&#39;</font><br>
+a = <font color="#00aa00">&#39;&#39;&#39;Me, four,<br>
+with multiple lines&#39;&#39;&#39;</font><br>
+a = <font color="#00aa00">"""I'm a string, too. It is called, Docstring, that can be used ...
+...<br>
+in many ways."""</font></pre>
+</div></ul>
+
+<li><b>문자열과 변수이름</b></li>
+<ul><li>변수이름은 문자열이지만, 문자열은 변수이름이 아니다.</li>
+<li>문자열은 값이며, 변수이름은 값에 연결되어 있을 뿐이다.</li>
+
+<div style="display: flex; justify-content: center; padding: 5px 10px; line-height: 0.6em">
+<pre class="prePrompt">
+&gt;&gt;&gt;</pre>
+<pre class="preBody">
+abc = <font color="#00aa00">"abc"</font><br>
+</pre>
+</div>
+
+<ul><li>위 코드의 등호 오른쪽 <font color="#00aa00">"abc"</font>는 문자열 값이며, 등호 왼쪽에 적힌 이름이 abc인 변수에 연결되어 있을 뿐이다.</li></ul>
+<li>문자열과 변수이름이 공통적으로 문자로 적혀있어 혼동하기 쉬우나, 반드시 구별하여 사용해야 한다.</li>
+<li>문자열 값을 표현하려면 반드시 따옴표를 사용해야 한다.</li>
+<ul><font color="#dd0000">문자열 값을 답으로 제출할 때, 따옴표 사용을 잊지 말아야 한다.</font></ul>
+</ul>
+
+<li><b>문자열과 사칙연산</b></li>
+<ul><li>사칙연산 중에서 덧셈과 곱셈이 가능하며, 나눗셈이나 뺄셈은 오류가 발생한다.</li>
+<ul><li>두 개 이상의 문자열을 합하는 것은 가능하다 (concatenation). 결과적으로 매우 긴 문자열이 만들어진다.</li></ul>
+<li>문자열에 정수를 곱하면 정수만큼 문자열이 반복적으로 합쳐진다.</li>
+<li> 앞에서 잠시 언급한 바와 같이 문자열을 더하거나 정수를 곱하면 위에서 표현한데로 보다 긴 문자열이 만들어지지만 본래 문자열은 여전히 그대로 존재한다.</li></ul>
+
+<li><b>dot 표기법</b></li>
+<ul><li>Python의 리스트에서 설명한데로 python의 문자열 object 역시 다양한 내장함수가 제공되고 있다.</li>
+<li>앞서 기술한데로 Python의 문자열은 절대 바꿀 수는 없으나, 다른 프로그램 언어와 달리 문자열과 관련된 다양한 기능을 제공하고 있으며 그 기능을 내장함수를 통해 얻을 수 있다.</li>
+<li>사용 가능한 method들의 목록을 보려면 Python built-in function <font color="#900090">dir</font>()를 이용한다.</li>
+
+<div style="display: flex; justify-content: center; padding: 5px 10px; line-height: 0.6em">
+<pre class="prePrompt">
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;</pre>
+
+<pre class="preBody">
+a = <font color="#00aa00">&#39;&#39;</font><br>
+<font color="#900090">type</font>(a)<br>
+<font color="#0000ff">&lt;class &#39;str&#39;&gt;</font><br>
+[f <font color="#ff7700">for</font> f <font color="#ff7700">in</font> <font color="#900090">dir</font>(a) if <font color="#00aa00">&#39;__&#39;</font> <font color="#ff7700">not in</font> f]<br>
+<font color="#0000ff">['capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', <br>
+'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust',<br>
+'lower', 'lstrip', 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit',<br>
+'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']</font></pre>
+</div>
+
+<li>위 코드은 문자열 object의 attribute들의 총 목록을 보여준 것으로 나중에 살펴 볼 list comprehension 문법을 이용하여 문자열 object와 직접적으로 관련된 attribute들만의 목록을 구했다.</li></ul>
+<br>
+<li><b>문자열 내장함수 목록</b></li>
+<ul><li>내장함수는 기본적으로 어떤 행위를 뜻한다.</li>
+<li>영어로 만들어진 python의 내장함수 이름은 행위를 뜻하는 영어 동사 문법을 따르고 있다.</li>
+<ul><li>예를 들어 내장함수 &#39;startswith&#39;는 영어의 ~~으로 시작한다의 의미를 지닌 전치사 with와 함께 동사 start에 s를 붙인 이름을 뜻한다.</li></ul>
+<li>&#39;is&#39;로 시작하는 내장함수들은 모두 해당 문자열의 특정 성질에 대한 판별 결과를 얻는 것들로써 결과는 <font color="#ff7700">True</font> 아니면 <font color="#ff7700">False</font> 둘 중의 한 개의 논리값이다.</li>
+<ul><li>예를 들어 isupper(<font color="#00aa00">&#39;a&#39;</font>)는  <font color="#ff7700">False</font>를 반환한다.</li></ul>
+<br>
+<li>문자열 내장함수들 중 개인적으로 많이 사용하는 몇 가지:</li>
+<center><table style="border-collapse: collapse; border: 1px solid #dddddd;">
+  <tr>
+    <th style="border: 1px solid #dddddd; padding: 8px;">method</th>
+    <th style="border: 1px solid #dddddd; padding: 8px;">설명</th>
+  </tr>
+  <tr style="background-color: #dddddd;">
+    <td style="border: 1px solid #dddddd; padding: 8px;">split(sep=None)</td>
+    <td style="border: 1px solid #dddddd; padding: 8px;">구분 문자열 sep으로 나눈 문자열 리스트 반환</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">replace(old,new)</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">문자열 내의 old 글자들 모두 new로 바꾼 새로운 문자열 반환</td>
+  </tr>
+  <tr style="background-color: #dddddd;">
+    <td style="border: 1px solid #dddddd;  padding: 8px;">index(sub)</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">글자 sub이 처음 나타난 순서번호(index) 반환</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">find(sub)</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">글자 sub이 처음 나타난 순서번호(index) 반환</td>
+  </tr>
+  <tr style="background-color: #dddddd;">
+    <td style="border: 1px solid #dddddd;  padding: 8px;">count(sub)</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">글자 sub의 발생 횟수 반환</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">join(iterable)</td>
+    <td style="border: 1px solid #dddddd;  padding: 8px;">여러 개로 구성된 문자열을 합친 문자열 반환 (예시 참조)</td>
+  </tr>
+</table>
+</center>
+
+<div style="display: flex; justify-content: center; padding: 5px 10px; line-height: 0.6em">
+<pre class="prePrompt">
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;</pre>
+<pre class="preBody">
+a = <font color="#00aa00">&#39;banana&#39;</font></font><br>
+a.count(<font color="#00aa00">&#39;a&#39;</font>)<br>
+<font color="#0000ff">3</font><br>
+a.count(<font color="#00aa00">&#39;na&#39;</font>)<br>
+<font color="#0000ff">2</font><br>
+a.replace(<font color="#00aa00">&#39;na&#39;</font>, <font color="#00aa00">&#39;ke&#39;</font>)<br>
+<font color="#0000ff">&#39;bakeke&#39;</font><br>
+a.split(<font color="#00aa00">&#39;a&#39;</font>)<br>
+<font color="#0000ff">[&#39;b&#39;, &#39;n&#39;, &#39;n&#39;, &#39;&#39;]</font><br>
+<font color="#00aa00">'와'</font>.join([<font color="#00aa00">'ab'</font>, <font color="#00aa00">'pq'</font>,  <font color="#00aa00">'rs'</font>])<br>
+<font color="#0000ff">'ab와pq와rs'</font></pre>
+</div>
+<li>위 테이블에서 누락된 내장함수들은 각자 찾아보기 권한다.</li>
+<li>위 테이블은 문자열의 내장함수를 간략하게 소개하는 내용으로 python에서 실제로 제공하는 많은 option들이 누락되어 있음을 밝힌다.</li>
+<li>내장함수를 사용할 때는 반드시 괄호 (와 )를 사용한다 (이유는 내장함수는 함수들이기 때문).</li>
+<li>내장함수를 아는만큼 문자열로 만들어진 다양한 자료들을 멋지게 활용할 수 있다.</li>
+<ul><li> 하지만 외우려고 고생하지 말고 이해 못한다고 겁 먹지말고 시간이 흘러 손가락이 익히도록 연습을 많이 하도록 노력하라.</li></ul>
+<li>문자열의 index를 살펴보기에 앞서 동일한 행위를 하는 두 개의 내장함수 index()와 find()의 존재 의미를 간단히 설명하고자 한다.</li>
+<ul><li>두 내장함수의 실질적인 사용에는 차이가 없다.</li>
+<li>두 내장함수의 차이점은 안타깝게도 오류 발생에 있다.</li>
+<li>오류를 만들지 않으면 차이가 없겠다는 생각을 하는 독자는 Python의 초급자라는 뜻이다.</li>
+<li>찾고자 하는 글자가 문자열에 없을 때 python이 일으키는 오류처리 방법에 차이점이 있다.</li>
+<ul><li>index()는 오류를 발생하여 프로그램이 종료된다.</li>
+<li>find()는 -1을 반환하여 경우에 따라 기대와 전혀 다른 일이 벌어질 수 있다.</li></ul>
+<li>두 내장함수의 오류를 때로는 의도적으로 코딩에 사용할 때도 있다.</li></ul></ul>
+
+<div style="display: flex; justify-content: center; padding: 5px 10px; line-height: 0.6em">
+<pre class="prePrompt">
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+<br>
+<br>
+<br>
+&gt;&gt;&gt;</pre>
+<pre class="preBody">
+a = <font color="#00aa00">&#39;banana&#39;</font></font><br>
+a.find(<font color="#00aa00">&#39;n&#39;</font>)<br>
+<font color="#0000ff">2</font><br>
+a.index(<font color="#00aa00">&#39;n&#39;</font>)<br>
+<font color="#0000ff">2</font><br>
+a.index(<font color="#00aa00">&#39;c&#39;</font>)<br>
+<font color="#ff0000">Traceback (most recent call last):<br>
+  File "", line 1, in <br>
+    a.index(&#39;c&#39;)<br>
+ValueError: substring not found</font><br>
+a.find(<font color="#00aa00">&#39;c&#39;</font>)<br>
+<font color="#0000ff">-1</font></pre>
+</div>
+
+<li><b>문자열의 indexing</b></li>
+<ul><li>문자열의 indexing은 리스트의 indexing과 동일하다.</li>
+<li>순서번호 또는 index, 두 용어는 리스트 사용할 때와 마찬가지로 문자열을 구성하는 각 글자의 순서를 가리킨다.</li>
+<li>글자 순서 표기에는 positive indexing과 negative indexing의 두 가지 방법이 있다</li>
+<ul><li>positive indexing: 맨 앞의 글자를 0-번째 그 다음 글자자는 1-번째 등으로 표기하는 순서</li>
+<li>negative indexing: 맨 뒤의 글자를 (-1)-번째, 뒤에서 두 번째 글자는 (-2)-번째로 표기하는 순서</li>
+<li>positive indexing으로 맨 뒤의 글자는 문자열의 총 글자수보다 항상 1만큼 작다.</li>
+<li>negative indexing으로 맨 앞의 글자 순서번호는 문자열 총 글자수에 음수를 곱한 값이다.</li></ul>
+<li>문자열의 순서번호는 항상 두 가지 방법으로 표기 가능하며, 필요에 따라 적절히 섞어서 사용할 수 있는 편리함이 있다.</li></ul>
+<li><b>문자열의 slicing</b></li>
+<div style="display: flex; justify-content: center; padding: 5px 10px; line-height: 0.6em">
+<pre class="prePrompt">
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;</pre>
+<pre class="preBody">
+a = <font color="#00aa00">&#39;white&#39;</font><br>
+a[2:4]<br>
+<font color="#0000ff">&#39;it&#39;</font><br>
+a[2:]<br>
+<font color="#0000ff">&#39;ite&#39;</font><br>
+a[:3]<br>
+<font color="#0000ff">&#39;whi&#39;</font><br>
+a[-2:]<br>
+<font color="#0000ff">&#39;te&#39;</font><br>
+a[:-3]<br>
+<font color="#0000ff">&#39;wh&#39;</font><br>
+a[:-1]<br>
+<font color="#0000ff">&#39;whit&#39;</font><br>
+a[:]<br>
+<font color="#0000ff">&#39;white&#39;</font></pre>
+</div>
+<ul><li>글자 일부분을 지정하려면 기본적으로 콜론(colon) 기호 :로 구분된 시작번호와 끝번호 두 개의 번호가 필요하다.</li>
+<ul><li>시작번호 끝번호 사이에 들어있는 모든 글자를 뜻한다.</li>
+<li>시작번호를 생략하는 경우는 맨 앞부터 시작하는 것을 뜻하며,</li>
+<li>끝번호가 생략된 경우는 맨 끝까지를 뜻한다.</li>
+<li>만약 시작번호와 끝번호 모두 생략되었다면, 위 코드 맨 마지막 경우와 같이, 당연히 처음부터 끝까지, 글자 전부를 뜻한다.</li></ul>
+<li>만약 시작번호와 끝번호와 함께 그 사이 모든 글자 중 일부분만을 다루고 싶은 경우:</li>
+<ul><li>아래 코드와 같이 콜론기호 2 개를 사용하여 맨 끝에 간격을 뜻하는 정수를 추가한다.</li>
+
+<div style="display: flex; justify-content: center; padding: 5px 10px; line-height: 0.6em">
+<pre class="prePrompt">
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;</pre>
+<pre class="preBody">
+a = <font color="#00aa00">&#39;white&#39;</font><br>
+a[::2] <font color="#dd0000"># 짝수번째 순서번호의 글자들</font><br>
+<font color="#0000ff">&#39;wie&#39;</font><br>
+a[1::2] <font color="#dd0000"># 홀수번째 순서번호의 글자들</font><br>
+<font color="#0000ff">&#39;ht&#39;</font><br>
+a[::-1] <font color="#dd0000"># 순서를 뒤집은 문자열</font><br>
+<font color="#0000ff">&#39;etihw&#39;</font></pre>
+</div>
+<li>slicing이란 본래 문자열의 일부분를 갖고오는 방법이기 때문에 본래 문자열에는 전혀 변화가 없다.</li></ul></ul>
+
+<li><b>문자열 비교</b></li>
+<ul><li>문자열 비교란 크기 비교라 생각할 수도 있지만 순서비교가 옳은 표현이다.</li>
+<li>문자열의 글자는 unicode라는 번호(값)과 일대일 대응되어 있다.</li>
+<li>전세계 모든 글자 (기호 포함) 하나하나 마다 unicode 번호가 정해져 있다.</li>
+<ul><li>예를 들어 완성형 한글의 모든 글자뿐만 아니라 한글 ㄱ에도 unicode 값 12593이 정해져 사용되고 있다. </li></ul>
+
+<div style="display: flex; justify-content: center; padding: 5px 10px; line-height: 0.6em">
+<pre class="prePrompt">
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;</pre>
+<pre class="preBody">
+<font color="#900090">ord</font>(<font color="#00aa00">&#39;ㄱ&#39;</font>)<br>
+<font color="#0000ff">12593</font><br>
+<font color="#900090">chr</font>(12593)<br>
+<font color="#0000ff">&#39;ㄱ&#39;</font><br>
+</pre>
+</div>
+
+<li>문자열 비교란 문자열 맨 앞 글자부터 순서에 따라 각 글자의 unicode 번호를 비교하는 것이다.</li>
+<li>unicode값이 작다는 것은 먼저 온다는 의미이다.</li>
+
+<div style="display: flex; justify-content: center; padding: 5px 10px; line-height: 0.6em">
+<pre class="prePrompt">
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;</pre>
+<pre class="preBody">
+<font color="#00aa00">&#39;apple&#39;</font> &lt; <font color="#00aa00">&#39;apple&#39;</font><br>
+<font color="#0000ff">False</font><br>
+<font color="#00aa00">&#39;apple&#39;</font> == <font color="#00aa00">&#39;Apple&#39;</font><br>
+<font color="#0000ff">False</font><br>
+<font color="#00aa00">&#39;apple&#39;</font> == <font color="#00aa00">&#39;Apple&#39;</font>.lower()<br>
+<font color="#0000ff">True</font></pre>
+</div>
+</ul>
+
+<li><b>문자열과 Python built-in function</b></li>
+<ul><li>문자열 값에 적용할 수 있는 몇 가지 Python built-in function들을 살펴보자.</li>
+<div style="display: flex; justify-content: center; padding: 5px 10px; line-height: 0.6em">
+<pre class="prePrompt">
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;</pre>
+<pre class="preBody">
+a = <font color="#00aa00">&#39;Python&#39;</font><br>
+<font color="#900090">print</font>(a)<br>
+<font color="#0000ff">Python</font><br>
+<font color="#900090">len</font>(a)<br>
+<font color="#0000ff">6</font><br>
+<font color="#900090">list</font>(a)<br>
+<font color="#0000ff">[&#39;P&#39;, &#39;y&#39;, &#39;t&#39;, &#39;h&#39;, &#39;o&#39;, &#39;n&#39;]</font><br>
+<font color="#900090">sorted</font>(a)<br>
+<font color="#0000ff">[&#39;P&#39;, &#39;h&#39;, &#39;n&#39;, &#39;o&#39;, &#39;t&#39;, &#39;y&#39;]</font><br>
+<font color="#900090">sorted</font>(a, reverse = <font color="#ff7700">True</font>)<br>
+<font color="#0000ff">[&#39;y&#39;, &#39;t&#39;, &#39;o&#39;, &#39;n&#39;, &#39;h&#39;,
+ &#39;P&#39;]</font></pre></div>
+</ul></ul>
+
+<li><b>f-string formatting</b></li>
+<ul><li>프로그래밍을 하다 보면 다양한 이유로 문자열을 만드는 경우가 있다.</li>
+<ul><li>변수에 연결된 값을 출력하는 경우, 특별한 문자열 형태의 출력을 만드는 경우가 대표적인 예이다.</li>
+<li>GUI application 프로그램을 만들다 보면 화면에 표시하는 부분 중 경우에 따라 변수와 연관된 경우 화면에 출력되는 부분을 특별한 문자열과 함께 나타내고 싶은 경우도 있을 수 있다.</li>
+<li>매우 고급 프로그래밍 문법으로 문자열에 나중을 위한 프로그램 코드를 넣고 실행하는 경우도 있을 수 있다.</li></ul>
+<li>변수에 연결된 값과 문자열을 적절히 섞은 문자열을 만드는 방법으로는 크게 3 가지가 있다.</li>
+<ol><li>프로그램 초창기 때부터 내려온 방법</li>
+<li>문자열의 내장함수 format()을 이용한 방법</li>
+<li>문자열 생성 방법 중 f-string formatting을 이용한 방법</li></ol>
+<li>위 3 가지 중 첫 2 가지에 대해서는 인터넷의 정보를 각자 참고하며 여기서는 세 번째만 살펴본다.</li>
+<ul><li>f-string formatting이란 따옴표를 입력하기 전에 f를 문자열 바로 앞에 넣는 것을 말한다.</li>
+<li>아래 코드를 보고 따라 하도록 노력한다.</li>
+<div style="display: flex; justify-content: center; padding: 5px 10px; line-height: 0.6em">
+<pre class="prePrompt">
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br>
+<br>
+&gt;&gt;&gt;<br><br>
+<font color="#700">&gt;&gt;&gt;</font></pre>
+<pre style="float: left; margin: 20px 20px 20px 0px; padding: 5px 50px 10px 5px; background: #efc; font-family: bold Courier New; font-size: 14px; width: text-content; text-align: left; border: 1px solid powderblue">
+a = 3.14e-165<br>
+<font color="#00aa00">f'{a}'</font><br>
+<font color="#0000ff">'3.14e-165'</font><br>
+a=<font color="#00aa00">'Python'</font><br>
+<font color="#00aa00">f'{a}'</font><br>
+<font color="#0000ff">'Python'</font><br>
+a=3.14; b=68<br>
+<font color="#00aa00">f'a={a}, b={b}'</font><br>
+<font color="#0000ff">'a=68, b=3.14'</font><br>
+a=3.14; b=5<br>
+<font color="#00aa00">f'a={b}, b={a}'</font><br>
+<font color="#0000ff">'a=5, b=3.14'</font><br>
+<font color="#00aa00">f'{"hi":<10}'</font><br>
+<font color="#0000ff">'hi        '</font><br>
+<font color="#00aa00">f'{"hi":>10}'</font><br>
+<font color="#0000ff">'        hi'</font><br>
+<font color="#00aa00">f'{"hi":^10}'</font><br>
+<font color="#0000ff">'    hi    '</font><br>
+<font color="#00aa00">f'{"hi":=^10}'</font><br>
+<font color="#0000ff">'====hi===='</font><br>
+<font color="#00aa00">f'{1.23456789:0.4f}'</font><br>
+<font color="#0000ff">'1.2346'</font></pre></div></ul></ul>
+
+<li><b>r-string formatting</b></li>
+<ul><li>앞서 f-string처럼 문자열 앞에 영어 알파벳을 접두사처럼 붙여 특별한 문자열을 만드는 방법이 또 있다.</li>
+<li>r-string 또는 raw string이라 부르는 문자열이며 접두사로 영문 알파벳 r 을 사용하는 문자열을 뜻한다.</li>
+<li>r-string을 제대로 이해하려면 먼저 escape characters라는 것을 먼저 알아야 한다.</li></div><script type="text/javascript">
+function saveTextAsFile() {
+    var textToSave = document.getElementById("inputTextToSave").value;
+    var textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});
+    var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
+    var fileNameToSaveAs = "J0926x42222086.txt"
+
+    var downloadLink = document.createElement("a");
+    downloadLink.download = fileNameToSaveAs;
+    downloadLink.innerHTML = "Download File";
+    downloadLink.href = textToSaveAsURL;
+    downloadLink.onclick = destroyClickedElement;
+    downloadLink.style.display = "none";
+    document.body.appendChild(downloadLink);
+
+    downloadLink.click();
+}
+
+function destroyClickedElement(event) {
+    document.body.removeChild(event.target);
+}
+</script>
+<script type="application/javascript">
+function display_Q0() {
+document.getElementById("Qs").innerHTML='';
+
+document.getElementById("Qs").style.display = "none";document.getElementById("HTML0").style.display = "block";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q1() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>2.</strong></font><br> 다음 표현식 "banana"+"peanut"를 실행한 결과는?';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q2() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>3.</strong></font><br> 다음 표현식 "grape"*len("2banana")를 실행한 결과는?';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q3() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>4.</strong></font><br> 다음 선택사항 중 이름이 varY인 변수에 연결된 문자열에 들어있는 글자들이 모두 대문자인지 아닌지 구하는 옳은 표현식은?<p style = "font-family:Courier New;font-size:16px;background:#eee">① list(varY)<br>② varY.split(&#39; &#39;)<br>③ varY.lower()<br>④ varY.isupper()<br>⑤ varY.endswith("png")<br>⑥ varY.isnumeric()<br>⑦ None of the above<br>⑧ All of the aboe</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q4() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>5.</strong></font><br> 다음 선택사항 중 이름이 varK인 변수에 연결된 문자열에 들어있는 글자들이 모두 소문자인지 아닌지 구하는 옳은 표현식은?<p style = "font-family:Courier New;font-size:16px;background:#eee">① varK.isupper()<br>② varK.startswith("xlsx")<br>③ varK.endswith("xlsx")<br>④ varK.isnumeric()<br>⑤ varK.lower()<br>⑥ varK.upper()<br>⑦ None of the above<br>⑧ All of the aboe</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q5() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>6.</strong></font><br> 다음 선택사항 중 이름이 vYYY인 변수에 연결된 문자열에 들어있는 글자들이 모두 숫자인지 아닌지 구하는 옳은 표현식은?<p style = "font-family:Courier New;font-size:16px;background:#eee">① list(vYYY)<br>② vYYY.upper()<br>③ vYYY.isnumeric()<br>④ vYYY.endswith("txt")<br>⑤ vYYY.islower()<br>⑥ vYYY.startswith("txt")<br>⑦ None of the above<br>⑧ All of the aboe</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q6() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>7.</strong></font><br> 다음 선택사항 중 이름이 varK인 변수에 연결된 문자열은 "xlsx"으로 시작하는 지 아닌지 구하는 옳은 표현식은?<p style = "font-family:Courier New;font-size:16px;background:#eee">① varK.isupper()<br>② varK.upper()<br>③ list(varK)<br>④ varK.split(&#39; &#39;)<br>⑤ varK.startswith("xlsx")<br>⑥ varK.islower()<br>⑦ None of the above<br>⑧ All of the aboe</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q7() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>8.</strong></font><br> 다음 선택사항 중 이름이 variableJ인 변수에 연결된 문자열의 끝이 "abc"인지 아닌지 구하는 옳은 표현식은?<p style = "font-family:Courier New;font-size:16px;background:#eee">① variableJ.upper()<br>② list(variableJ)<br>③ variableJ.lower()<br>④ variableJ.startswith("abc")<br>⑤ variableJ.isnumeric()<br>⑥ variableJ.isupper()<br>⑦ None of the above<br>⑧ All of the aboe</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q8() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>9.</strong></font><br> 다음 선택사항 중 이름이 vA인 변수에 연결된 문자열의 글자들을 모두 대문자로 바꾼 문자열을 얻는 옳은 표현식은?<p style = "font-family:Courier New;font-size:16px;background:#eee">① vA.endswith("txt")<br>② vA.upper()<br>③ vA.islower()<br>④ vA.split(&#39; &#39;)<br>⑤ vA.isupper()<br>⑥ vA.isnumeric()<br>⑦ None of the above<br>⑧ All of the aboe</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q9() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>10.</strong></font><br> 다음 선택사항 중 이름이 varY인 변수에 연결된 문자열의 글자들을 모두 소문자로 바꾼 문자열을 얻는 옳은 표현식은?<p style = "font-family:Courier New;font-size:16px;background:#eee">① varY.isupper()<br>② varY.isnumeric()<br>③ varY.endswith("txt")<br>④ varY.lower()<br>⑤ varY.split(&#39; &#39;)<br>⑥ varY.islower()<br>⑦ None of the above<br>⑧ All of the aboe</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q10() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>11.</strong></font><br> 다음 선택사항 중 이름이 varK인 변수에 연결된 문자열을 빈 칸(" ")으로 나눈 단어들의 리스트를 구하는 옳은 표현식은?<p style = "font-family:Courier New;font-size:16px;background:#eee">① varK.endswith("abc")<br>② varK.upper()<br>③ list(varK)<br>④ varK.islower()<br>⑤ varK.isupper()<br>⑥ varK.lower()<br>⑦ None of the above<br>⑧ All of the aboe</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q11() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>12.</strong></font><br> 다음 선택사항 중 이름이 vS인 변수에 연결된 문자열을 구성하는 문자들의 리스트를 구하는 옳은 표현식은?<p style = "font-family:Courier New;font-size:16px;background:#eee">① list(vS)<br>② vS.upper()<br>③ vS.split(" ")<br>④ vS.isupper()<br>⑤ vS.isnumeric()<br>⑥ vS.islower()<br>⑦ None of the above<br>⑧ All of the aboe</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q12() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>13.</strong></font><br> 문자열 &#39;abcdeefffweoi&#39;의 index가 4부터 6을 포함하는  순서까지 사이의 문자열을 구하는 옳은 표현식은?<p style = "font-family:Courier New;font-size:16px;background:#eee">① &#39;abcdeefffweoi&#39;[:-6]<br>② &#39;abcdeefffweoi&#39;[4:7]<br>③ &#39;abcdeefffweoi&#39;[4:]<br>④ &#39;abcdeefffweoi&#39;[-4:]<br>⑤ &#39;abcdeefffweoi&#39;[4:6]<br>⑥ None of the above<br>⑦ All of the aboe</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q13() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>14.</strong></font><br> 문자열 &#39;n23gs4poise&#39;의 index가 3부터 8 미만의 순서까지 사이의 문자열을 구하는 옳은 표현식은?<p style = "font-family:Courier New;font-size:16px;background:#eee">① &#39;n23gs4poise&#39;[:8]<br>② &#39;n23gs4poise&#39;[3:8]<br>③ &#39;n23gs4poise&#39;[3:]<br>④ &#39;n23gs4poise&#39;[-3:]<br>⑤ &#39;n23gs4poise&#39;[3:9]<br>⑥ None of the above<br>⑦ All of the aboe</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q14() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>15.</strong></font><br> 문자열 &#39;n23gs4poise&#39;의 마지막 5 글자들로만 구성된 문자열을 구하는 옳은 표현식은?<p style = "font-family:Courier New;font-size:16px;background:#eee">① &#39;n23gs4poise&#39;[5:6]<br>② &#39;n23gs4poise&#39;[5:7]<br>③ &#39;n23gs4poise&#39;[-5:]<br>④ &#39;n23gs4poise&#39;[:6]<br>⑤ &#39;n23gs4poise&#39;[:-6]<br>⑥ None of the above<br>⑦ All of the aboe</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q15() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>16.</strong></font><br> 문자열 &#39;abcdeefffweoi&#39;의 첫 9 글자들로만 구성된 문자열을 구하는 옳은 표현식은?<p style = "font-family:Courier New;font-size:16px;background:#eee">① &#39;abcdeefffweoi&#39;[2:10]<br>② &#39;abcdeefffweoi&#39;[:9]<br>③ &#39;abcdeefffweoi&#39;[:-9]<br>④ &#39;abcdeefffweoi&#39;[2:9]<br>⑤ &#39;abcdeefffweoi&#39;[-2:]<br>⑥ None of the above<br>⑦ All of the aboe</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q16() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>17.</strong></font><br> 문자열 &#39;International&#39;의 index가 끝에서 8 번째 글자 전까지의 글자들로만 구성된 문자열을 구하는 옳은 표현식은?<p style = "font-family:Courier New;font-size:16px;background:#eee">① &#39;International&#39;[5:9]<br>② &#39;International&#39;[:8]<br>③ &#39;International&#39;[5:]<br>④ &#39;International&#39;[-5:]<br>⑤ &#39;International&#39;[:-8]<br>⑥ None of the above<br>⑦ All of the aboe</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q17() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>18.</strong></font><br> 문자열 &#39;Bussiness&Trade&#39;의 index가 2 번째 글자를 포함한 뒤의 모든 글자들로 구성된 문자열을 구하는 옳은 표현식은?<p style = "font-family:Courier New;font-size:16px;background:#eee">① &#39;Bussiness&Trade&#39;[2:]<br>② &#39;Bussiness&Trade&#39;[:8]<br>③ &#39;Bussiness&Trade&#39;[:-8]<br>④ &#39;Bussiness&Trade&#39;[-2:]<br>⑤ &#39;Bussiness&Trade&#39;[2:8]<br>⑥ None of the above<br>⑦ All of the aboe</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q18() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>19.</strong></font><br> 아래 코드의 출력을 구하라.<p style = "font-family:Courier New;font-size:16px;background:#eee">S = <font color="#00aa00">&#39;International&#39;</font><br><font color="#900090">print</font>(S[3:6])</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q19() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>20.</strong></font><br> 아래 코드의 출력을 구하라.<p style = "font-family:Courier New;font-size:16px;background:#eee">S = <font color="#00aa00">&#39;International&#39;</font><br><font color="#900090">print</font>(S[4:])</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q20() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>21.</strong></font><br> 아래 코드의 출력을 구하라.<p style = "font-family:Courier New;font-size:16px;background:#eee">S = <font color="#00aa00">&#39;n23gs4poise&#39;</font><br><font color="#900090">print</font>(S[:8])</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q21() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>22.</strong></font><br> 아래 코드의 출력을 구하라.<p style = "font-family:Courier New;font-size:16px;background:#eee">S = <font color="#00aa00">&#39;n23gs4poise&#39;</font><br><font color="#900090">print</font>(S[:-2])</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q22() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>23.</strong></font><br> 다음 선택사항 중 이름이 vA인 변수에 연결된 문자열을 구성하는 문자 (character)의 갯수를 구하는 옳은 표현식은?<p style = "font-family:Courier New;font-size:16px;background:#eee">① ord(vA)<br>② len(vA)<br>③ sorted(vA)<br>④ sorted(vA, reverse=True)<br>⑤ chr(vA)<br>⑥ None of the above<br>⑦ All of the aboe</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q23() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>24.</strong></font><br> 다음 선택사항 중 이름이 varY인 변수에 연결된 문자 (character)의 unicode 값을 구하는 옳은 표현식은?<p style = "font-family:Courier New;font-size:16px;background:#eee">① len(varY)<br>② ord(varY)<br>③ list(varY)<br>④ chr(varY)<br>⑤ sorted(varY, reverse=True)<br>⑥ None of the above<br>⑦ All of the aboe</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q24() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>25.</strong></font><br> 다음 선택사항 중 이름이 vYYY인 변수에 연결된 정수(integer)에 해당하는 문자 (character)를 구하는 옳은 표현식은?<p style = "font-family:Courier New;font-size:16px;background:#eee">① chr(vYYY)<br>② ord(vYYY)<br>③ len(vYYY)<br>④ sorted(vYYY, reverse=True)<br>⑤ sorted(vYYY)<br>⑥ None of the above<br>⑦ All of the aboe</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q25() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>26.</strong></font><br> 다음 선택사항 중 이름이 vYYY인 변수에 연결된 문자열을 구성하는 문자들을 오름차순으로 정렬한 리스트를 구하는 옳은 표현식은?<p style = "font-family:Courier New;font-size:16px;background:#eee">① sorted(vYYY)<br>② list(vYYY)<br>③ ord(vYYY)<br>④ len(vYYY)<br>⑤ sorted(vYYY, reverse=True)<br>⑥ None of the above<br>⑦ All of the aboe</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q26() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>27.</strong></font><br> 다음 선택사항 중 이름이 vYYY인 변수에 연결된 문자열을 구성하는 문자들을 내림차순으로 정렬한 리스트를 구하는 옳은 표현식은?<p style = "font-family:Courier New;font-size:16px;background:#eee">① sorted(vYYY)<br>② ord(vYYY)<br>③ sorted(vYYY, reverse=True)<br>④ len(vYYY)<br>⑤ chr(vYYY)<br>⑥ None of the above<br>⑦ All of the aboe</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+function display_Q27() {
+document.getElementById("Qs").innerHTML='<font color=red><strong>28.</strong></font><br> 다음 선택사항 중 이름이 vB인 변수에 연결된 문자열의 문자들로 구성된 리스트를 구하는 옳은 표현식은?<p style = "font-family:Courier New;font-size:16px;background:#eee">① ord(vB)<br>② chr(vB)<br>③ list(vB)<br>④ sorted(vB)<br>⑤ len(vB)<br>⑥ None of the above<br>⑦ All of the aboe</p>';
+
+document.getElementById("Qs").style.display = "block";document.getElementById("HTML0").style.display = "none";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+
+document.onkeydown = function (e) {
+  if (e.altKey && e.keyCode == 39) {
+    Qnumber += 1;
+    if (Qnumber>Qmax) {Qnumber = 0};
+    eval("display_Q"+Qnumber+"()");}
+  else if (e.altKey && e.keyCode == 37) {
+    Qnumber -= 1;
+    if (Qnumber<0) {Qnumber = Qmax};
+    eval("display_Q"+Qnumber+"()");}
+}
+var Qnumber = 0;
+var Qmax = 27;
+display_Q0();</script>
+</body>
+</html>
