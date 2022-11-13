@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Exercise J1121x42222086 이인호</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+.prePrompt {float: left; margin: 20px   0px 20px 10px; padding: 10px   5px 10px   5px; background: #efc; font-family: bold Courier New; font-size: 14px; line-height: 0.5 em; width: 30px;              text-align: left; border: 1px solid powderblue; border-right: none; color: #700;}
+.preBody     {float: left; margin: 20px 10px 20px   0px; padding: 10px 10px 10px 10px; background: #efc; font-family: bold Courier New; font-size: 14px; line-height: 0.5 em; width: text-content; text-align: left; border: 1px solid powderblue; }
+</style>
+</head>
+<body style="word-break:keep-all; display: block; font-family: malgun;  font-size: 18px;">
+<center><h4>Exercise J1121x42222086 이인호</h4></center><ul style="font-size: 14px">
+<li>답이 숫자인 경우, 가장 중요한 3개의 숫자로 반올림한다. For numeric answers, round answer to the 3 most significant digits.</li>
+<li>숫자를 문자열로 제출하는 경우, 양쪽에 따옴표를 붙인다. To submit a numeric string, use quotes to contain the answer.</li></ul>
+<table>
+<tbody>
+<tr>
+<td ><button onclick="saveTextAsFile()" style="font-family: malgun;  font-size: 20px">Save<br>Answers<br>to File</button></td>
+<td><textarea id="inputTextToSave" cols="155" rows="5" style="font-family: malgun;  font-size: 16px">
+나, 이인호은(는) 위 내용을 읽고 아래 답을 직접 작성했음을 확인합니다. I, 이인호, confirm that I read the notes above and wrote the answer myself below.
+--------------------------------------------------------------------------------------------------------------------
+1: </textarea></td></tr></tbody></table><input type="button" onclick="javascript:display_Q0();" value="Q-1" /> &emsp;
+<hr> <div id="Qs" style="word-break:keep-all; padding: 0px 20px 10px 20px; background-color: #eee; border: 1px solid #999; display: block; font-family: malgun;  font-size: 18px;"></div>
+<canvas id="canvas" width="800" height="0"></canvas>
+<div id="HTML0" style="word-break:keep-all; padding: 0px 20px 10px 20px; background-color: #f2f6fc; border: 1px solid #999; display: block; font-family: malgun;  font-size: 18px;line-height: 1.5em; display=none;"><center><h3>Comprehension과 여러 가지 응용</h3></center>
+<li>List comprehension</li>
+<hr><em>List comprehension</em>은 반복문을 통해 리스트 값을 만드는 과정을 한 줄로 줄이는 기법이다.<hr>
+<ul><li>단순한 리스트 만들기</li>
+<pre class="preCode">
+x = [f <font color="#ff7700">for</font> f <font color="#ff7700">in</font> <font color="#900090">range</font>(5, 15)]</pre>
+<pre class="preCode">
+x = <font color="#900090">list</font>(<font color="#900090">range</font>(5, 15))</pre>
+<li>조건을 만족하는 값들로 구성되는 리스트 만들기</li>
+<pre class="preCode">
+x = [f <font color="#ff7700">for</font> f <font color="#ff7700">in</font> <font color="#900090">range</font>(5, 15) <font color="#ff7700">if not</font> f%3]</pre>
+<li>조건에 따라 달라지는 값들로 구성되는 리스트 만들기</li>
+<pre class="preCode">
+x = [f <font color="#ff7700">if</font> f%4 == 1 <font color="#ff7700">else</font> f**2 <font color="#ff7700">for</font> f <font color="#ff7700">in</font> <font color="#900090">range</font>(5, 25)]</pre>
+</ul>
+<li>List comprehension과 built-in functions</li>
+<hr><em>List comprehension</em> 기법으로 만든 리스트는 여느 리스트처럼  built-in function()에 바로 사용할 수도 있다.<hr>
+<ul><li>List comprehension과 sum(), min(), max(), sorted()</li>
+<pre class="preCode">
+x = <font color="#900090">sum</font>([f <font color="#ff7700">if</font> f%4 == 1 <font color="#ff7700">else</font> f**2 <font color="#ff7700">for</font> f <font color="#ff7700">in</font> <font color="#900090">range</font>(5, 25)])</pre>
+<pre class="preCode">
+x = <font color="#900090">sorted</font>([f <font color="#ff7700">for</font> f <font color="#ff7700">in</font> <font color="#900090">range</font>(5, 15) <font color="#ff7700">if not</font> f%3])</pre>
+
+<li>List comprehension과 enumerate()</li>
+<pre class="preCode">
+colors=[<font color="#00aa00">'white'</font>, <font color="#00aa00">'red'</font>, <font color="#00aa00">'black'</font>, <font color="#00aa00">'white'</font>, <font color="#00aa00">'green'</font>, <font color="#00aa00">'blue'</font>]<br>
+indices=[j <font color="#ff7700">for</font> j, color <font color="#ff7700">in</font> <font color="#900090">enumerate</font>(colors) <font color="#ff7700">if</font> color == <font color="#00aa00">'white'</font>]</pre>
+
+<li>List comprehension과 zip()</li>
+<pre class="preCode">
+colors=[<font color="#00aa00">'white'</font>, <font color="#00aa00">'red'</font>, <font color="#00aa00">'black'</font>, <font color="#00aa00">'white'</font>, <font color="#00aa00">'green'</font>, <font color="#00aa00">'blue'</font>]<br>
+indices=[5, 9, 0, 6, 7, 9]<br>
+indx2find=9<br>
+answers=[c <font color="#ff7700">for</font> c, j <font color="#ff7700">in</font> <font color="#900090">zip</font>(colors, indices) <font color="#ff7700">if</font> j == indx2find]</pre>
+
+<li>List comprehension과 str</li>
+<pre class="preCode">
+colors=[<font color="#00aa00">'white'</font>, <font color="#00aa00">'red'</font>, <font color="#00aa00">'black'</font>, <font color="#00aa00">'white'</font>, <font color="#00aa00">'green'</font>, <font color="#00aa00">'blue'</font>]<br>
+longString = <font color="#00aa00">''</font>.join(<font color="#900090">sorted</font>(colors))</pre>
+</ul>
+<li>List comprehension과 list methods</li>
+<hr>마찬가지로 리스트의 다양한 method()를 바로 적용할 수도 있다.<hr>
+<li>Dictionary comprehension</li>
+<hr>그 뿐만 아니라 dict 개체도 만들 수 있으며,.
+<pre class="preCode">
+colors=[<font color="#00aa00">'white'</font>, <font color="#00aa00">'red'</font>, <font color="#00aa00">'black'</font>, <font color="#00aa00">'white'</font>, <font color="#00aa00">'green'</font>, <font color="#00aa00">'blue'</font>]<br>
+indices=[5, 9, 0, 6, 7, 9]<br>
+indx2find=9<br>
+answers={c:j <font color="#ff7700">for</font> c, j <font color="#ff7700">in</font> <font color="#900090">zip</font>(colors, indices) <font color="#ff7700">if</font> j == indx2find}</pre>
+</ul>
+
+<hr>
+<em>List comprehension</em>과 모양은 매우 비슷하나 리스트 생성 대신 generator를 만드는 방법도 있다. 방법은 list comprehension도 동일하나 단지 양쪽 끝에 사용하는 대괄호 대신 보통 괄호를 사용하는 차이점이 있다. 보다 중요한 차이는 generator는 해당 코드가 실행할 때 내용을 모두 실행하는 것이 아니라 실제 실행을 요청하는 코드에 따라 한 번씩 실행하게 된다. 결과적으로 메모리를 거의 사용하지 않는다는 특징 및 장점을 갖고 있다.
+<pre class="preCode">
+x = (f**2 <font color="#ff7700">for</font> f <font color="#ff7700">in</font> <font color="#900090">range</font>(5, 15))</pre>
+
+<hr>원하면 또 다른 list comprehension과 중첩해서 더 다양한 리스트를 만들 수도 있다.
+<pre class="preCode">
+matrix = [[1, 2], [3,4], [5,6], [7,8]]<br>
+transpose = [[row[i] <font color="#ff7700">for</font> row <font color="#ff7700">in</font> matrix] <font color="#ff7700">for</font> i <font color="#ff7700">in</font> <font color="#900090">range</font>(2)]</pre>
+<hr>
+<em>List comprehension</em>은 분명 리스트를 구성하는 과정에서 발생하는 시간 소모를 줄일 수 있다는 장점이 있으며, 코드가 간략해진만큼 오류 가능성도 줄어드는 것도 장점도 있고, 코드가 읽기 쉬워지는 장점도 있다.<hr>
+장점이 있는 만큼 단점도 존재한다. 코드가 줄어드는 만큼 오류 찾기가 어려워진다는 사실을 알고 있어야 한다. 따라서 읽기 쉬워지는 만큼 과하지 않을 정도로 사용할 필요가 있다.</div><script type="text/javascript">
+function saveTextAsFile() {
+    var textToSave = document.getElementById("inputTextToSave").value;
+    var textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});
+    var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
+    var fileNameToSaveAs = "J1121x42222086.txt"
+
+    var downloadLink = document.createElement("a");
+    downloadLink.download = fileNameToSaveAs;
+    downloadLink.innerHTML = "Download File";
+    downloadLink.href = textToSaveAsURL;
+    downloadLink.onclick = destroyClickedElement;
+    downloadLink.style.display = "none";
+    document.body.appendChild(downloadLink);
+
+    downloadLink.click();
+}
+
+function destroyClickedElement(event) {
+    document.body.removeChild(event.target);
+}
+</script>
+<script type="application/javascript">
+function display_Q0() {
+document.getElementById("Qs").innerHTML='';
+
+document.getElementById("Qs").style.display = "none";document.getElementById("HTML0").style.display = "block";
+
+var cnvs = document.getElementById("canvas");
+var ctx = cnvs.getContext("2d");
+ctx.clearRect(0,0, cnvs.width, cnvs.height);
+cnvs.height=0;
+}
+
+document.onkeydown = function (e) {
+  if (e.altKey && e.keyCode == 39) {
+    Qnumber += 1;
+    if (Qnumber>Qmax) {Qnumber = 0};
+    eval("display_Q"+Qnumber+"()");}
+  else if (e.altKey && e.keyCode == 37) {
+    Qnumber -= 1;
+    if (Qnumber<0) {Qnumber = Qmax};
+    eval("display_Q"+Qnumber+"()");}
+}
+var Qnumber = 0;
+var Qmax = 0;
+display_Q0();</script>
+</body>
+</html>
